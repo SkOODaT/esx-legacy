@@ -165,7 +165,7 @@ end
 
 local savePlayers = -1
 Citizen.CreateThread(function()
-	savePlayers = MySQL.Sync.store("UPDATE users SET `accounts` = ?, `job` = ?, `job_grade` = ?, `group` = ?, `position` = ?, `inventory` = ?, `loadout` = ? WHERE `identifier` = ?")
+	savePlayers = MySQL.Sync.store("UPDATE users SET `accounts` = ?, `job` = ?, `job_grade` = ?, `group` = ?, `position` = ?, `inventory` = ?, `loadout` = ?, `ammotypes` = ? WHERE `identifier` = ?")
 end)
 
 ESX.SavePlayer = function(xPlayer, cb)
@@ -180,6 +180,7 @@ ESX.SavePlayer = function(xPlayer, cb)
 			json.encode(xPlayer.getCoords()),
 			json.encode(xPlayer.getInventory(true)),
 			json.encode(xPlayer.getLoadout(true)),
+			json.encode(xPlayer.getAmmotype(true)),
 			xPlayer.getIdentifier()
 		}, function(rowsChanged)
 			cb2()

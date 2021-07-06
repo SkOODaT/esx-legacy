@@ -3,7 +3,7 @@ Citizen.CreateThread(function()
 	SetMapName('San Andreas')
 	SetGameType('ESX Legacy')
 	
-	local query = '`accounts`, `job`, `job_grade`, `group`, `position`, `inventory`, `skin`, `loadout`' -- Select these fields from the database
+	local query = '`accounts`, `job`, `job_grade`, `group`, `position`, `inventory`, `skin`, `loadout`, `ammotypes`' -- Select these fields from the database
 	if Config.Multichar or Config.Identity then	-- append these fields to the select query
 		query = query..', `firstname`, `lastname`, `dateofbirth`, `sex`, `height`'
 	end
@@ -125,6 +125,7 @@ function loadESXPlayer(identifier, playerId, isNew)
 		inventory = {},
 		job = {},
 		loadout = {},
+		ammotypes = {},
 		playerName = GetPlayerName(playerId),
 		weight = 0
 	}
@@ -221,12 +222,24 @@ function loadESXPlayer(identifier, playerId, isNew)
 				userData.group = 'user'
 			end
 
+			-- ammotypes
+			if result[1].ammotypes and result[1].ammotypes ~= '' then
+				local ammotypes = json.decode(result[1].ammotypes)
+				for name,ammocount in pairs(ammotypes) do
+					table.insert(userData.ammotypes, {
+						name = name,
+						ammo = ammocount.ammo
+					})
+				end
+			end
+
 			-- Loadout
 			if result[1].loadout and result[1].loadout ~= '' then
 				local loadout = json.decode(result[1].loadout)
 
 				for name,weapon in pairs(loadout) do
 					local label = ESX.GetWeaponLabel(name)
+					local ammotype = ESX.GetWeaponAmmoType(name)
 
 					if label then
 						if not weapon.components then weapon.components = {} end
@@ -235,6 +248,7 @@ function loadESXPlayer(identifier, playerId, isNew)
 						table.insert(userData.loadout, {
 							name = name,
 							ammo = weapon.ammo,
+							ammotype = ammotype,
 							label = label,
 							components = weapon.components,
 							tintIndex = weapon.tintIndex
@@ -273,7 +287,7 @@ function loadESXPlayer(identifier, playerId, isNew)
 	end)
 
 	Async.parallel(tasks, function(results)
-		local xPlayer = CreateExtendedPlayer(playerId, identifier, userData.group, userData.accounts, userData.inventory, userData.weight, userData.job, userData.loadout, userData.playerName, userData.coords)
+		local xPlayer = CreateExtendedPlayer(playerId, identifier, userData.group, userData.accounts, userData.inventory, userData.weight, userData.job, userData.loadout, userData.ammotypes, userData.playerName, userData.coords)
 		ESX.Players[playerId] = xPlayer
 
 		if userData.firstname then 
@@ -293,6 +307,7 @@ function loadESXPlayer(identifier, playerId, isNew)
 			inventory = xPlayer.getInventory(),
 			job = xPlayer.getJob(),
 			loadout = xPlayer.getLoadout(),
+			ammotypes = xPlayer.getAmmotype(),
 			maxWeight = xPlayer.getMaxWeight(),
 			money = xPlayer.getMoney(),
 			dead = false
@@ -349,11 +364,11 @@ AddEventHandler('esx:updateCoords', function(coords)
 end)
 
 RegisterNetEvent('esx:updateWeaponAmmo')
-AddEventHandler('esx:updateWeaponAmmo', function(weaponName, ammoCount)
+AddEventHandler('esx:updateWeaponAmmo', function(weaponName, ammoCount, ammoType)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if xPlayer then
-		xPlayer.updateWeaponAmmo(weaponName, ammoCount)
+		xPlayer.updateWeaponAmmo(weaponName, ammoCount, ammoType)
 	end
 end)
 
@@ -555,6 +570,7 @@ ESX.RegisterServerCallback('esx:getPlayerData', function(source, cb)
 		inventory    = xPlayer.getInventory(),
 		job          = xPlayer.getJob(),
 		loadout      = xPlayer.getLoadout(),
+		ammotypes    = xPlayer.getAmmotype(),
 		money        = xPlayer.getMoney()
 	})
 end)
@@ -568,6 +584,7 @@ ESX.RegisterServerCallback('esx:getOtherPlayerData', function(source, cb, target
 		inventory    = xPlayer.getInventory(),
 		job          = xPlayer.getJob(),
 		loadout      = xPlayer.getLoadout(),
+		ammotypes    = xPlayer.getAmmotype(),
 		money        = xPlayer.getMoney()
 	})
 end)

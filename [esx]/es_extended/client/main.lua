@@ -105,7 +105,7 @@ end)
 AddEventHandler('esx:restoreLoadout', function()
 	local playerPed = PlayerPedId()
 	if ESX.PlayerData.ped ~= playerPed then ESX.SetPlayerData('ped', playerPed) end
-	local ammoTypes = {}
+	--local ammoTypes = {}
 	RemoveAllPedWeapons(ESX.PlayerData.ped, true)
 
 	for k,v in ipairs(ESX.PlayerData.loadout) do
@@ -115,17 +115,22 @@ AddEventHandler('esx:restoreLoadout', function()
 		GiveWeaponToPed(ESX.PlayerData.ped, weaponHash, 0, false, false)
 		SetPedWeaponTintIndex(ESX.PlayerData.ped, weaponHash, v.tintIndex)
 
-		local ammoType = GetPedAmmoTypeFromWeapon(ESX.PlayerData.ped, weaponHash)
+		--local ammoType = GetPedAmmoTypeFromWeapon(ESX.PlayerData.ped, weaponHash)
 
 		for k2,v2 in ipairs(v.components) do
 			local componentHash = ESX.GetWeaponComponent(weaponName, v2).hash
 			GiveWeaponComponentToPed(ESX.PlayerData.ped, weaponHash, componentHash)
 		end
 
-		if not ammoTypes[ammoType] then
-			AddAmmoToPed(ESX.PlayerData.ped, weaponHash, v.ammo)
-			ammoTypes[ammoType] = true
-		end
+		--if not ammoTypes[ammoType] then
+		----	AddAmmoToPedByType(ESX.PlayerData.ped, ammoType, v.ammo)
+		--	ammoTypes[ammoType] = true
+		--end
+
+	end
+
+	for k3,v3 in ipairs(ESX.PlayerData.ammotypes) do
+		AddAmmoToPedByType(ESX.PlayerData.ped, tonumber(v3.name), v3.ammo)
 	end
 end)
 
@@ -376,7 +381,8 @@ function StartServerSyncLoops()
 
 			if currentWeapon.timer == sleep then
 				local ammoCount = GetAmmoInPedWeapon(ESX.PlayerData.ped, currentWeapon.hash)
-				TriggerServerEvent('esx:updateWeaponAmmo', currentWeapon.name, ammoCount)
+				local ammoType = GetPedAmmoTypeFromWeapon(ESX.PlayerData.ped, currentWeapon.hash)
+				TriggerServerEvent('esx:updateWeaponAmmo', currentWeapon.name, ammoCount, ammoType)
 				currentWeapon.timer = 0
 			elseif currentWeapon.timer > sleep then
 				currentWeapon.timer = currentWeapon.timer - sleep
@@ -389,8 +395,9 @@ function StartServerSyncLoops()
 
 					if weapon then
 						currentWeapon.name = weapon.name
-						currentWeapon.hash = weaponHash	
-						currentWeapon.timer = 100 * sleep		
+						currentWeapon.ammotype = weapon.ammo.hash
+						currentWeapon.hash = weaponHash
+						currentWeapon.timer = 100 * sleep
 					end
 				end
 			else

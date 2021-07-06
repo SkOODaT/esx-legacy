@@ -1,4 +1,4 @@
-function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, weight, job, loadout, name, coords)
+function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, weight, job, loadout, ammotypes, name, coords)
 	local self = {}
 
 	self.accounts = accounts
@@ -8,6 +8,7 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 	self.inventory = inventory
 	self.job = job
 	self.loadout = loadout
+	self.ammotypes = ammotypes
 	self.name = name
 	self.playerId = playerId
 	self.source = playerId
@@ -131,7 +132,8 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 			local minimalLoadout = {}
 
 			for k,v in ipairs(self.loadout) do
-				minimalLoadout[v.name] = {ammo = v.ammo}
+				minimalLoadout[v.name] = {ammo = v.ammo, ammotype = v.ammotype}
+				print("Saved Loadout: ", v.name)
 				if v.tintIndex > 0 then minimalLoadout[v.name].tintIndex = v.tintIndex end
 
 				if #v.components > 0 then
@@ -152,6 +154,21 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 			return minimalLoadout
 		else
 			return self.loadout
+		end
+	end
+
+	self.getAmmotype = function(minimal)
+		if minimal then
+			local minimalAmmotype = {}
+
+			for k,v in ipairs(self.ammotypes) do
+				minimalAmmotype[v.name] = {ammo = v.ammo}
+				print("Saved AmmoType: ", v.name)
+			end
+
+			return minimalAmmotype
+		else
+			return self.ammotypes
 		end
 	end
 
@@ -329,13 +346,20 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 	self.addWeapon = function(weaponName, ammo)
 		if not self.hasWeapon(weaponName) then
 			local weaponLabel = ESX.GetWeaponLabel(weaponName)
+			local ammotype = ESX.GetWeaponAmmoType(weaponName)
 
 			table.insert(self.loadout, {
 				name = weaponName,
+				ammotype = ammotype,
 				ammo = ammo,
 				label = weaponLabel,
 				components = {},
 				tintIndex = 0
+			})
+
+			table.insert(self.ammotypes, {
+				name = ammotype,
+				ammo = ammo
 			})
 
 			self.triggerEvent('esx:addWeapon', weaponName, ammo)
@@ -368,12 +392,13 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 		end
 	end
 
-	self.updateWeaponAmmo = function(weaponName, ammoCount)
-		local loadoutNum, weapon = self.getWeapon(weaponName)
+	self.updateWeaponAmmo = function(weaponName, ammoCount, ammoType)
+		--local loadoutNum, weapon = self.getWeapon(weaponName)
+		local ammoNum, ammotype = self.getAmmo(tostring(ammoType))
 
-		if weapon then
-			if ammoCount < weapon.ammo then
-				weapon.ammo = ammoCount
+		if ammotype then
+			if ammoCount < ammotype.ammo then
+				ammotype.ammo = ammoCount
 			end
 		end
 	end
@@ -491,6 +516,16 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 		return
 	end
 
+	self.getAmmo = function(ammoName)
+		for k,v in ipairs(self.ammotypes) do
+			if v.name == ammoName then
+				return k, v
+			end
+		end
+
+		return
+	end
+	
 	self.showNotification = function(msg)
 		self.triggerEvent('esx:showNotification', msg)
 	end
