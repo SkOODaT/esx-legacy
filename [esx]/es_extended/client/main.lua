@@ -105,7 +105,7 @@ end)
 AddEventHandler('esx:restoreLoadout', function()
 	local playerPed = PlayerPedId()
 	if ESX.PlayerData.ped ~= playerPed then ESX.SetPlayerData('ped', playerPed) end
-	--local ammoTypes = {}
+
 	RemoveAllPedWeapons(ESX.PlayerData.ped, true)
 
 	for k,v in ipairs(ESX.PlayerData.loadout) do
@@ -115,18 +115,10 @@ AddEventHandler('esx:restoreLoadout', function()
 		GiveWeaponToPed(ESX.PlayerData.ped, weaponHash, 0, false, false)
 		SetPedWeaponTintIndex(ESX.PlayerData.ped, weaponHash, v.tintIndex)
 
-		--local ammoType = GetPedAmmoTypeFromWeapon(ESX.PlayerData.ped, weaponHash)
-
 		for k2,v2 in ipairs(v.components) do
 			local componentHash = ESX.GetWeaponComponent(weaponName, v2).hash
 			GiveWeaponComponentToPed(ESX.PlayerData.ped, weaponHash, componentHash)
 		end
-
-		--if not ammoTypes[ammoType] then
-		----	AddAmmoToPedByType(ESX.PlayerData.ped, ammoType, v.ammo)
-		--	ammoTypes[ammoType] = true
-		--end
-
 	end
 
 	for k3,v3 in ipairs(ESX.PlayerData.ammotypes) do
@@ -201,8 +193,8 @@ AddEventHandler('esx:addWeaponComponent', function(weapon, weaponComponent)
 end)
 
 RegisterNetEvent('esx:setWeaponAmmo')
-AddEventHandler('esx:setWeaponAmmo', function(weapon, weaponAmmo)
-	SetPedAmmo(ESX.PlayerData.ped, GetHashKey(weapon), weaponAmmo)
+AddEventHandler('esx:setWeaponAmmo', function(ammoType, ammoCount)
+	SetPedAmmoByType(ESX.PlayerData.ped, ammoType, ammoCount)
 end)
 
 RegisterNetEvent('esx:setWeaponTint')
@@ -212,7 +204,6 @@ end)
 
 RegisterNetEvent('esx:removeWeapon')
 AddEventHandler('esx:removeWeapon', function(weapon)
-	local playerPed = ESX.PlayerData.ped
 	RemoveWeaponFromPed(ESX.PlayerData.ped, GetHashKey(weapon))
 	SetPedAmmo(ESX.PlayerData.ped, GetHashKey(weapon), 0)
 end)
@@ -380,9 +371,10 @@ function StartServerSyncLoops()
 			local sleep = 5
 
 			if currentWeapon.timer == sleep then
-				local ammoCount = GetAmmoInPedWeapon(ESX.PlayerData.ped, currentWeapon.hash)
 				local ammoType = GetPedAmmoTypeFromWeapon(ESX.PlayerData.ped, currentWeapon.hash)
-				TriggerServerEvent('esx:updateWeaponAmmo', currentWeapon.name, ammoCount, ammoType)
+				local ammoCount = GetAmmoInPedWeapon(ESX.PlayerData.ped, currentWeapon.hash)
+
+				TriggerServerEvent('esx:updateWeaponAmmo', ammoType, ammoCount)
 				currentWeapon.timer = 0
 			elseif currentWeapon.timer > sleep then
 				currentWeapon.timer = currentWeapon.timer - sleep
@@ -395,7 +387,6 @@ function StartServerSyncLoops()
 
 					if weapon then
 						currentWeapon.name = weapon.name
-						currentWeapon.ammotype = weapon.ammo.hash
 						currentWeapon.hash = weaponHash
 						currentWeapon.timer = 100 * sleep
 					end

@@ -222,17 +222,6 @@ function loadESXPlayer(identifier, playerId, isNew)
 				userData.group = 'user'
 			end
 
-			-- ammotypes
-			if result[1].ammotypes and result[1].ammotypes ~= '' then
-				local ammotypes = json.decode(result[1].ammotypes)
-				for name,ammocount in pairs(ammotypes) do
-					table.insert(userData.ammotypes, {
-						name = name,
-						ammo = ammocount.ammo
-					})
-				end
-			end
-
 			-- Loadout
 			if result[1].loadout and result[1].loadout ~= '' then
 				local loadout = json.decode(result[1].loadout)
@@ -248,12 +237,23 @@ function loadESXPlayer(identifier, playerId, isNew)
 						table.insert(userData.loadout, {
 							name = name,
 							ammo = weapon.ammo,
-							ammotype = ammotype,
+							--ammotype = ammotype,
 							label = label,
 							components = weapon.components,
 							tintIndex = weapon.tintIndex
 						})
 					end
+				end
+			end
+
+			-- ammotypes
+			if result[1].ammotypes and result[1].ammotypes ~= '' then
+				local ammotypes = json.decode(result[1].ammotypes)
+				for name,ammocount in pairs(ammotypes) do
+					table.insert(userData.ammotypes, {
+						name = name,
+						ammo = ammocount.ammo
+					})
 				end
 			end
 
@@ -364,11 +364,11 @@ AddEventHandler('esx:updateCoords', function(coords)
 end)
 
 RegisterNetEvent('esx:updateWeaponAmmo')
-AddEventHandler('esx:updateWeaponAmmo', function(weaponName, ammoCount, ammoType)
+AddEventHandler('esx:updateWeaponAmmo', function(ammoType, ammoCount)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if xPlayer then
-		xPlayer.updateWeaponAmmo(weaponName, ammoCount, ammoType)
+		xPlayer.updateWeaponAmmo(ammoType, ammoCount)
 	end
 end)
 
