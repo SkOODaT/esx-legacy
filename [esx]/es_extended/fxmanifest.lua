@@ -7,6 +7,8 @@ description 'ES Extended'
 lua54 'yes'
 version '1.7.5'
 
+loadscreen_manual_shutdown 'yes'
+
 shared_scripts {
 	'locale.lua',
 	'locales/*.lua',
