@@ -1,5 +1,13 @@
 local pickups = {}
 
+local hospital_points = {
+	{x=-449.17, y=-340.43, z=34.5, h=78.63},
+	{x=-874.9, y=-309.34, z=39.53, h=346.15},
+	{x=360.49, y=-584.51, z=28.82, h=277.60},
+	{x=343.28, y=-1399.14, z=32.51, h=44.56},
+	{x=1151.22, y=-1529.97, z=35.37, h=328.75}
+}
+
 Citizen.CreateThread(function()
 	while not Config.Multichar do
 		Citizen.Wait(0)
@@ -12,12 +20,124 @@ Citizen.CreateThread(function()
 	end
 end)
 
+-- setting this to false will NOT mute the sound as soon as the game loads 
+-- (you will hear background noises while on the loading screen, so not recommended)
+local muteSound = true -- (default: true)[Leave it]
+function ToggleSound(state)
+	if state then
+		StartAudioScene("MP_LEADERBOARD_SCENE");
+	else
+		StopAudioScene("MP_LEADERBOARD_SCENE");
+	end
+end
+
+-- Hide radar & HUD, set cloud opacity, and use a hacky way of removing third party resource HUD elements.
+function ClearScreen()
+	SetCloudHatOpacity(0.05)
+	HideHudAndRadarThisFrame()
+	-- nice hack to 'hide' HUD elements from other resources/scripts. kinda buggy though.
+	SetDrawOrigin(1000.0, 1000.0, 1000.0, 0)
+end
+
+RegisterNetEvent('esx:PlayerSwitchOutIn')
+AddEventHandler('esx:PlayerSwitchOutIn', function()
+	-- Stopping the loading screen from automatically being dismissed.
+	--SetManualShutdownLoadingScreenNui(true)
+	-- Disable sound (if configured)
+	--ToggleSound(muteSound)
+	-- Set clound hat opacity
+	SetCloudHatOpacity(0.05) -- Default 0.01
+	-- Switch out the player if it isn't already in a switch state.
+	if not IsPlayerSwitchInProgress() then
+		SwitchOutPlayer(PlayerPedId(), 0, 1)
+	end
+	-- Wait for the switch cam to be in the sky in the 'waiting' state (5).
+	while GetPlayerSwitchState() ~= 5 do
+		Citizen.Wait(0)
+		ClearScreen()
+	end
+	-- Re-enable the sound in case it was muted.
+	ToggleSound(false)
+	-- Switch player back in
+	local timer = GetGameTimer()
+	while true do
+		ClearScreen()
+		Citizen.Wait(0)
+		-- wait 5 seconds before starting the switch to the player
+		if GetGameTimer() - timer > 5000 then
+			-- Switch to the player.
+			SwitchInPlayer(PlayerPedId())
+			ClearScreen()
+			-- Wait for the player switch to be completed (state 12).
+			while GetPlayerSwitchState() ~= 12 do
+				Citizen.Wait(0)
+				ClearScreen()
+			end
+			-- Stop the infinite loop.
+			break
+		end
+	end
+	-- Reset the draw origin, just in case (allowing HUD elements to re-appear correctly)
+	ClearDrawOrigin()
+	SetPlayerCameras()
+end)
+
+function SetPlayerCameras()
+	-- set cams to zoom out
+	SetFollowPedCamViewMode(2)
+	SetFollowVehicleCamZoomLevel(2)
+end
+
+RegisterNetEvent('esx:spawnPlayer')
+AddEventHandler('esx:spawnPlayer', function(xPlayer, skin)
+	ESX.PlayerLoaded = true
+	ESX.PlayerData = xPlayer
+
+	FreezeEntityPosition(PlayerPedId(), true)
+	-- Make player not killable
+	SetPlayerInvincible(PlayerPedId(), true)
+
+	-- iterate over whole table to get all keys
+	local keyset = {}
+	for k in pairs(hospital_points) do
+		table.insert(keyset, k)
+	end
+	-- now you can reliably return a random key
+	random_hospital = hospital_points[keyset[math.random(#keyset)]]
+	--print(random_hospital.x, random_hospital.y, random_hospital.z, random_hospital.h)
+			
+	exports.spawnmanager:spawnPlayer({
+		x = random_hospital.x,
+		y = random_hospital.y,
+		z = random_hospital.z + 0.25,
+		heading = random_hospital.heading,
+		model = `mp_m_freemode_01`,
+		skipFade = true
+	}, function()
+		TriggerServerEvent('esx:onPlayerSpawn')
+		TriggerEvent('esx:onPlayerSpawn')
+		TriggerEvent('playerSpawned') -- compatibility with old scripts
+		TriggerEvent('esx:restoreLoadout')
+
+		TriggerEvent('skinchanger:loadSkin', skin)
+		TriggerEvent('esx:loadingScreenOff')
+		ShutdownLoadingScreen()
+		ShutdownLoadingScreenNui()
+		FreezeEntityPosition(ESX.PlayerData.ped, false)
+		-- Make player killable again
+		SetPlayerInvincible(ESX.PlayerData.ped, false)
+	end)
+	SetPlayerCameras()
+end)
+
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 	ESX.PlayerLoaded = true
 	ESX.PlayerData = xPlayer
 
 	FreezeEntityPosition(PlayerPedId(), true)
+	-- Make player not killable
+	SetPlayerInvincible(PlayerPedId(), true)
 
 	if Config.Multichar then
 		Citizen.Wait(3000)
@@ -28,8 +148,12 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 			z = ESX.PlayerData.coords.z + 0.25,
 			heading = ESX.PlayerData.coords.heading,
 			model = `mp_m_freemode_01`,
-			skipFade = false
+			skipFade = true
 		}, function()
+			-- Switch player out/in
+			TriggerEvent('esx:PlayerSwitchOutIn', xPlayer, isNew, skin)
+			Citizen.Wait(700) -- (700 wait before load-in, to give it time 700 seems good)
+
 			TriggerServerEvent('esx:onPlayerSpawn')
 			TriggerEvent('esx:onPlayerSpawn')
 			TriggerEvent('playerSpawned') -- compatibility with old scripts
@@ -45,6 +169,8 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 			ShutdownLoadingScreen()
 			ShutdownLoadingScreenNui()
 			FreezeEntityPosition(ESX.PlayerData.ped, false)
+			-- Make player killable again
+			SetPlayerInvincible(ESX.PlayerData.ped, false)
 		end)
 	end
 
@@ -71,6 +197,7 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 			grade_label = gradeLabel
 		})
 	end
+	SetPlayerCameras()
 	StartServerSyncLoops()
 end)
 

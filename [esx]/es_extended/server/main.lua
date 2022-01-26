@@ -361,6 +361,36 @@ AddEventHandler('esx:updateCoords', function(coords)
 	end
 end)
 
+RegisterNetEvent('esx:onPlayerDeath')
+AddEventHandler('esx:onPlayerDeath', function()
+	local playerId = source
+	local xPlayer = ESX.GetPlayerFromId(playerId)
+
+	-- Switch player out/in
+	Citizen.Wait(5000) -- (5000 wait after death)
+	TriggerClientEvent('esx:PlayerSwitchOutIn', playerId, xPlayer, skin)
+
+	MySQL.Async.fetchAll('SELECT skin FROM users WHERE identifier = @identifier', {
+		['@identifier'] = xPlayer.identifier
+	}, function(users)
+		local user, skin = users[1]
+
+		local jobSkin = {
+			skin_male   = xPlayer.job.skin_male,
+			skin_female = xPlayer.job.skin_female
+		}
+
+		if user.skin then
+			skin = json.decode(user.skin)
+		end
+
+		Citizen.Wait(4000)
+
+		TriggerClientEvent('esx:spawnPlayer', playerId, xPlayer, skin)
+
+	end)
+end)
+
 RegisterNetEvent('esx:updateWeaponAmmo')
 AddEventHandler('esx:updateWeaponAmmo', function(weaponName, ammoCount)
 	local xPlayer = ESX.GetPlayerFromId(source)

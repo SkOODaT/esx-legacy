@@ -6,6 +6,8 @@ description 'ES Extended'
 
 version 'legacy'
 
+loadscreen_manual_shutdown 'yes'
+
 shared_scripts {
 	'locale.lua',
 	'locales/de.lua',
