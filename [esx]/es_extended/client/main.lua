@@ -102,7 +102,7 @@ end)
 
 AddEventHandler('esx:restoreLoadout', function()
 	ESX.SetPlayerData('ped', PlayerPedId())
-	local ammoTypes = {}
+
 	RemoveAllPedWeapons(ESX.PlayerData.ped, true)
 
 	for k,v in ipairs(ESX.PlayerData.loadout) do
@@ -112,17 +112,14 @@ AddEventHandler('esx:restoreLoadout', function()
 		GiveWeaponToPed(ESX.PlayerData.ped, weaponHash, 0, false, false)
 		SetPedWeaponTintIndex(ESX.PlayerData.ped, weaponHash, v.tintIndex)
 
-		local ammoType = GetPedAmmoTypeFromWeapon(ESX.PlayerData.ped, weaponHash)
-
 		for k2,v2 in ipairs(v.components) do
 			local componentHash = ESX.GetWeaponComponent(weaponName, v2).hash
 			GiveWeaponComponentToPed(ESX.PlayerData.ped, weaponHash, componentHash)
 		end
+	end
 
-		if not ammoTypes[ammoType] then
-			AddAmmoToPed(ESX.PlayerData.ped, weaponHash, v.ammo)
-			ammoTypes[ammoType] = true
-		end
+	for k3,v3 in ipairs(ESX.PlayerData.ammotypes) do
+		AddAmmoToPedByType(ESX.PlayerData.ped, GetHashKey(v3.name), v3.ammo)
 	end
 end)
 
@@ -195,6 +192,11 @@ end)
 RegisterNetEvent('esx:setWeaponAmmo')
 AddEventHandler('esx:setWeaponAmmo', function(weapon, weaponAmmo)
 	SetPedAmmo(ESX.PlayerData.ped, GetHashKey(weapon), weaponAmmo)
+end)
+
+RegisterNetEvent('esx:setAmmo')
+AddEventHandler('esx:setAmmo', function(ammoType, ammoCount)
+	SetPedAmmoByType(ESX.PlayerData.ped, GetHashKey(ammoType), ammoCount)
 end)
 
 RegisterNetEvent('esx:setWeaponTint')
@@ -367,27 +369,38 @@ end
 function StartServerSyncLoops()
 	-- keep track of ammo
 	Citizen.CreateThread(function()
-		local currentWeapon = {timer=0}
+		local currentWeapon = {timer=0,ammoCount=0}
 		while ESX.PlayerLoaded do
 			local sleep = 5
 
 			if currentWeapon.timer == sleep then
-				local ammoCount = GetAmmoInPedWeapon(ESX.PlayerData.ped, currentWeapon.hash)
-				TriggerServerEvent('esx:updateWeaponAmmo', currentWeapon.name, ammoCount)
+				for k,v in ipairs(ESX.PlayerData.loadout) do
+					local ammoCount = GetAmmoInPedWeapon(ESX.PlayerData.ped, GetHashKey(v.name))
+					--local ammoBool, ammoMax = GetMaxAmmo(ESX.PlayerData.ped, GetHashKey(v.name))
+					TriggerServerEvent('esx:updateWeaponAmmo', v.name, ammoCount)
+					--print("UPDATE WEAPON: ", v.name, ammoCount, ammoMax)
+				end
+				
+				for k,v in ipairs(ESX.PlayerData.ammotypes) do
+					local ammoCount = GetPedAmmoByType(ESX.PlayerData.ped, GetHashKey(v.name))
+					local ammoBool, ammoMax = GetMaxAmmoByType(ESX.PlayerData.ped, GetHashKey(v.name))
+					TriggerServerEvent('esx:updateAmmo', v.name, ammoCount, ammoMax)
+					--print("UPDATE AMMO: ", v.name, ammoCount, ammoMax)
+				end
 				currentWeapon.timer = 0
 			elseif currentWeapon.timer > sleep then
 				currentWeapon.timer = currentWeapon.timer - sleep
 			end
 
-			if IsPedArmed(ESX.PlayerData.ped, 4) then
-				if IsPedShooting(ESX.PlayerData.ped) then
+			if IsPedArmed(ESX.PlayerData.ped, 4 | 2) then
+				if IsPedShooting(ESX.PlayerData.ped) or IsControlPressed(0, 24) then
 					local _,weaponHash = GetCurrentPedWeapon(ESX.PlayerData.ped, true)
 					local weapon = ESX.GetWeaponFromHash(weaponHash)
 
 					if weapon then
 						currentWeapon.name = weapon.name
 						currentWeapon.hash = weaponHash	
-						currentWeapon.timer = 100 * sleep		
+						currentWeapon.timer = 100 * sleep
 					end
 				end
 			else
