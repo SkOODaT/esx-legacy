@@ -376,6 +376,7 @@ AddEventHandler('esx:spawnVehicle', function(vehicle)
 		TriggerEvent('chat:addMessage', { args = { '^1SYSTEM', 'Invalid vehicle model.' } })
 	end
 end)
+
 RegisterNetEvent('esx:createPickup')
 AddEventHandler('esx:createPickup', function(pickupId, label, coords, type, name, components, tintIndex)
 	local function setObjectProperties(object)
@@ -628,35 +629,35 @@ end)
 
 RegisterNetEvent("esx:tpm")
 AddEventHandler("esx:tpm", function()
-    local WaypointHandle = GetFirstBlipInfoId(8)
-    if DoesBlipExist(WaypointHandle) then
-        local waypointCoords = GetBlipInfoIdCoord(WaypointHandle)
+	local WaypointHandle = GetFirstBlipInfoId(8)
+	if DoesBlipExist(WaypointHandle) then
+		local waypointCoords = GetBlipInfoIdCoord(WaypointHandle)
 
-        for height = 1, 1000 do
-            SetPedCoordsKeepVehicle(ESX.PlayerData.ped, waypointCoords["x"], waypointCoords["y"], height + 0.0)
+		for height = 1, 1000 do
+			SetPedCoordsKeepVehicle(ESX.PlayerData.ped, waypointCoords["x"], waypointCoords["y"], height + 0.0)
 
-            local foundGround, zPos = GetGroundZFor_3dCoord(waypointCoords["x"], waypointCoords["y"], height + 0.0)
+			local foundGround, zPos = GetGroundZFor_3dCoord(waypointCoords["x"], waypointCoords["y"], height + 0.0)
 
-            if foundGround then
-                SetPedCoordsKeepVehicle(ESX.PlayerData.ped, waypointCoords["x"], waypointCoords["y"], height + 0.0)
+			if foundGround then
+				SetPedCoordsKeepVehicle(ESX.PlayerData.ped, waypointCoords["x"], waypointCoords["y"], height + 0.0)
 
-                break
-            end
+				break
+			end
 
-            Citizen.Wait(5)
-        end
-        TriggerEvent('chatMessage', "Successfully Teleported")
-    else
-        TriggerEvent('chatMessage', "No Waypoint Set")
-    end
+			Citizen.Wait(5)
+		end
+		TriggerEvent('chatMessage', "Successfully Teleported")
+	else
+		TriggerEvent('chatMessage', "No Waypoint Set")
+	end
 end)
 
 local noclip = false
 RegisterNetEvent("esx:noclip")
 AddEventHandler("esx:noclip", function(input)
-    local player = PlayerId()
+	local player = PlayerId()
 	
-    local msg = "disabled"
+	local msg = "disabled"
 	if(noclip == false)then
 		noclip_pos = GetEntityCoords(ESX.PlayerData.ped, false)
 	end
@@ -669,9 +670,9 @@ AddEventHandler("esx:noclip", function(input)
 
 	TriggerEvent("chatMessage", "Noclip has been ^2^*" .. msg)
 	end)
-	
-	local heading = 0
-	Citizen.CreateThread(function()
+
+local heading = 0
+Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
@@ -719,19 +720,19 @@ end)
 
 RegisterNetEvent("esx:killPlayer")
 AddEventHandler("esx:killPlayer", function()
-  SetEntityHealth(ESX.PlayerData.ped, 0)
+	SetEntityHealth(ESX.PlayerData.ped, 0)
 end)
 
 RegisterNetEvent("esx:freezePlayer")
 AddEventHandler("esx:freezePlayer", function(input)
-    local player = PlayerId()
-    if input == 'freeze' then
-        SetEntityCollision(ESX.PlayerData.ped, false)
-        FreezeEntityPosition(ESX.PlayerData.ped, true)
-        SetPlayerInvincible(player, true)
-    elseif input == 'unfreeze' then
-        SetEntityCollision(ESX.PlayerData.ped, true)
-	    FreezeEntityPosition(ESX.PlayerData.ped, false)
-        SetPlayerInvincible(player, false)
-    end
+	local player = PlayerId()
+	if input == 'freeze' then
+		SetEntityCollision(ESX.PlayerData.ped, false)
+		FreezeEntityPosition(ESX.PlayerData.ped, true)
+		SetPlayerInvincible(player, true)
+	elseif input == 'unfreeze' then
+		SetEntityCollision(ESX.PlayerData.ped, true)
+		FreezeEntityPosition(ESX.PlayerData.ped, false)
+		SetPlayerInvincible(player, false)
+	end
 end)
