@@ -65,6 +65,18 @@ function ESX.GetWeaponComponent(weaponName, weaponComponent)
 	end
 end
 
+function ESX.GetWeaponAmmoType(weaponName)
+	weaponName = string.upper(weaponName)
+	local weapons = Config.Weapons
+
+	for k,v in ipairs(Config.Weapons) do
+		if v.name == weaponName then
+			ammotype = v.ammo.hash
+			return ammotype
+		end
+	end
+end
+
 function ESX.DumpTable(table, nb)
 	if nb == nil then
 		nb = 0

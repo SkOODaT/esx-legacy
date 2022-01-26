@@ -164,7 +164,7 @@ function ESX.TriggerServerCallback(name, requestId, source, cb, ...)
 end
 
 function Core.SavePlayer(xPlayer, cb)
-	MySQL.prepare('UPDATE `users` SET `accounts` = ?, `job` = ?, `job_grade` = ?, `group` = ?, `position` = ?, `inventory` = ?, `loadout` = ? WHERE `identifier` = ?', {
+	MySQL.prepare('UPDATE `users` SET `accounts` = ?, `job` = ?, `job_grade` = ?, `group` = ?, `position` = ?, `inventory` = ?, `loadout` = ?, `ammotypes` = ?  WHERE `identifier` = ?', {
 		json.encode(xPlayer.getAccounts(true)),
 		xPlayer.job.name,
 		xPlayer.job.grade,
@@ -172,6 +172,7 @@ function Core.SavePlayer(xPlayer, cb)
 		json.encode(xPlayer.getCoords()),
 		json.encode(xPlayer.getInventory(true)),
 		json.encode(xPlayer.getLoadout(true)),
+	    json.encode(xPlayer.getAmmotype(true)),
 		xPlayer.identifier
 	}, function(affectedRows)
 		if affectedRows == 1 then
@@ -198,10 +199,11 @@ function Core.SavePlayers(cb)
 				json.encode(xPlayer.getCoords()),
 				json.encode(xPlayer.getInventory(true)),
 				json.encode(xPlayer.getLoadout(true)),
+				json.encode(xPlayer.getAmmotype(true)),
 				xPlayer.identifier
 			}
 		end
-		MySQL.prepare("UPDATE `users` SET `accounts` = ?, `job` = ?, `job_grade` = ?, `group` = ?, `position` = ?, `inventory` = ?, `loadout` = ? WHERE `identifier` = ?", parameters,
+		MySQL.prepare("UPDATE `users` SET `accounts` = ?, `job` = ?, `job_grade` = ?, `group` = ?, `position` = ?, `inventory` = ?, `loadout` = ?, `ammotypes` = ? WHERE `identifier` = ?", parameters,
 		function(results)
 			if results then
 				if type(cb) == 'function' then cb() else print(('[^2INFO^7] Saved %s %s over %s ms'):format(count, count > 1 and 'players' or 'player', (os.time() - time) / 1000000)) end

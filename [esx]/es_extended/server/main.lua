@@ -2,7 +2,7 @@ SetMapName('San Andreas')
 SetGameType('ESX Legacy')
 
 local newPlayer = 'INSERT INTO `users` SET `accounts` = ?, `identifier` = ?, `group` = ?'
-local loadPlayer = 'SELECT `accounts`, `job`, `job_grade`, `group`, `position`, `inventory`, `skin`, `loadout`'
+local loadPlayer = 'SELECT `accounts`, `job`, `job_grade`, `group`, `position`, `inventory`, `skin`, `loadout`, `ammotypes`'
 
 if Config.Multichar then
     newPlayer = newPlayer .. ', `firstname` = ?, `lastname` = ?, `dateofbirth` = ?, `sex` = ?, `height` = ?'
@@ -118,6 +118,7 @@ function loadESXPlayer(identifier, playerId, isNew)
         inventory = {},
         job = {},
         loadout = {},
+		ammotypes = {},
         playerName = GetPlayerName(playerId),
         weight = 0
     }
@@ -284,6 +285,17 @@ function loadESXPlayer(identifier, playerId, isNew)
         end
     end
 
+	-- ammotypes
+	if result.ammotypes and result.ammotypes ~= '' then
+		local ammotypes = json.decode(result.ammotypes)
+		for name,ammocount in pairs(ammotypes) do
+			table.insert(userData.ammotypes, {
+				name = name,
+				ammo = ammocount.ammo
+			})
+		end
+	end
+
     -- Identity
     if result.firstname and result.firstname ~= '' then
         userData.firstname = result.firstname
@@ -301,7 +313,7 @@ function loadESXPlayer(identifier, playerId, isNew)
     end
 
     local xPlayer = CreateExtendedPlayer(playerId, identifier, userData.group, userData.accounts, userData.inventory,
-        userData.weight, userData.job, userData.loadout, userData.playerName, userData.coords)
+        userData.weight, userData.job, userData.loadout, userData.ammotypes, userData.playerName, userData.coords)
     ESX.Players[playerId] = xPlayer
 
     if userData.firstname then
@@ -327,6 +339,7 @@ function loadESXPlayer(identifier, playerId, isNew)
         inventory = xPlayer.getInventory(),
         job = xPlayer.getJob(),
         loadout = xPlayer.getLoadout(),
+        ammotypes = xPlayer.getAmmotype(),
         maxWeight = xPlayer.getMaxWeight(),
         money = xPlayer.getMoney(),
         dead = false
@@ -397,6 +410,15 @@ if not Config.OxInventory then
             xPlayer.updateWeaponAmmo(weaponName, ammoCount)
         end
     end)
+
+	RegisterNetEvent('esx:updateAmmo')
+	AddEventHandler('esx:updateAmmo', function(ammoType, ammoCount)
+		local xPlayer = ESX.GetPlayerFromId(source)
+
+		if xPlayer then
+			xPlayer.updateAmmo(ammoType, ammoCount)
+		end
+	end)
 
     RegisterNetEvent('esx:giveInventoryItem')
     AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCount)
@@ -626,6 +648,7 @@ ESX.RegisterServerCallback('esx:getPlayerData', function(source, cb)
         inventory = xPlayer.getInventory(),
         job = xPlayer.getJob(),
         loadout = xPlayer.getLoadout(),
+		ammotypes = xPlayer.getAmmotype(),
         money = xPlayer.getMoney(),
 		position = xPlayer.getCoords(true)
     })
@@ -644,6 +667,7 @@ ESX.RegisterServerCallback('esx:getOtherPlayerData', function(source, cb, target
         inventory = xPlayer.getInventory(),
         job = xPlayer.getJob(),
         loadout = xPlayer.getLoadout(),
+		ammotypes = xPlayer.getAmmotype(),
         money = xPlayer.getMoney(),
 		position = xPlayer.getCoords(true)
     })
