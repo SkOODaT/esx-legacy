@@ -348,9 +348,9 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 		end
 	end
 
-	function self.addWeapon(weaponName, ammo)
+	function self.addWeapon(weapon, ammoCount)
 		if not self.hasWeapon(weaponName) then
-			local weaponLabel = ESX.GetWeaponLabel(weaponName)
+			local weaponLabel = ESX.GetWeaponLabel(weapon)
 			local loadoutNum, weaponName = self.getWeapon(weapon)
 			local lWeaponName = nil if weaponName then lWeaponName = weaponName.name end
 
