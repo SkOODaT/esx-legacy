@@ -181,9 +181,48 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 		NetworkSetFriendlyFireOption(true)
 	end
 
-	if Config.DisableHealthRegen then
-		SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0)
-	end
+	if Config.DisableVehicleRewards then
+    DisablePlayerVehicleRewards(PlayerId())
+  end
+
+  if Config.DisableNPCDrops then
+    RemoveAllPickupsOfType(0xDF711959) -- carbine rifle
+    RemoveAllPickupsOfType(0xF9AFB48F) -- pistol
+    RemoveAllPickupsOfType(0xA9355DCD) -- pumpshotgun
+  end
+
+		CreateThread(function()
+			while true do 
+				local Sleep = 1500
+
+				if Config.DisableHealthRegeneration then
+					SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0)
+				end
+
+				if Config.DisableWeaponWheel then
+					Sleep = 0
+					BlockWeaponWheelThisFrame()
+					DisableControlAction(0, 37,true)
+				end
+
+				if Config.DisableAimAssist then
+					if Sleep == 1500 then Sleep = 100 end
+					if IsPedArmed(ESX.PlayerData.ped, 4) then
+						SetPlayerLockonRangeOverride(PlayerId(), 2.0)
+					end
+				end
+
+				if Config.RemoveHudCommonents then
+					if Sleep ~= 0 then Sleep = 0 end
+					for i=1, #(Config.RemoveHudCommonents) do
+						 if Config.RemoveHudCommonents[i] then
+								HideHudComponentThisFrame(i)
+						 end
+					end
+				end
+				Wait(Sleep)
+			end
+		end)
 
 	if Config.EnableHud then
 		for k,v in ipairs(ESX.PlayerData.accounts) do
@@ -401,6 +440,32 @@ AddEventHandler('esx:spawnVehicle', function(vehicle)
 
 				ESX.Game.SpawnVehicle(model, playerCoords, playerHeading, function(vehicle)
 					TaskWarpPedIntoVehicle(ESX.PlayerData.ped, vehicle, -1)
+					SetVehicleDirtLevel(vehicle, 0)
+					SetVehicleFuelLevel(vehicle, 100.0)
+			    SetVehicleCustomSecondaryColour(vehicle, 55, 140, 191) -- ESX Blue
+					SetVehicleCustomPrimaryColour(vehicle, 0, 0, 0) -- white
+					--SetVehicleCustomPrimaryColour(vehicle, 55, 140, 191) -- ESX Blue
+				--	SetVehicleCustomSecondaryColour(vehicle, 0, 0, 0) -- white
+					SetEntityAsMissionEntity(vehicle, true, true) -- Persistant Vehicle
+
+					-- Max out vehicle upgrades
+						SetVehicleExplodesOnHighExplosionDamage(vehicle, true)
+						SetVehicleModKit(vehicle, 0)
+						SetVehicleMod(vehicle, 11, 3, false) -- modEngine
+						SetVehicleMod(vehicle, 12, 2, false) -- modBrakes
+						SetVehicleMod(vehicle, 13, 2, false) -- modTransmission
+						SetVehicleMod(vehicle, 15, 3, false) -- modSuspension
+						SetVehicleMod(vehicle, 16, 4, false) -- modArmor
+						ToggleVehicleMod(vehicle, 18, true) -- modTurbo
+						SetVehicleTurboPressure(vehicle, 100.0)
+						SetVehicleNumberPlateText(vehicle, "ESX KISS")
+						SetVehicleNumberPlateTextIndex(vehicle, 1)
+						SetVehicleNitroEnabled(vehicle, true)
+
+						for i=0, 3 do
+							SetVehicleNeonLightEnabled(vehicle, i, true)
+						end
+						SetVehicleNeonLightsColour(vehicle, 55, 140, 191)  -- ESX Blue
 				end)
 			else
 				ESX.ShowNotification('Invalid vehicle model.')
@@ -540,14 +605,22 @@ function StartServerSyncLoops()
 				local currentWeapon = {timer=0,ammoCount=0}
 
 					while ESX.PlayerLoaded do
-						local sleep = 5
-
-						if currentWeapon.timer == sleep then
-							for k,v in ipairs(ESX.PlayerData.loadout) do
-								local ammoCount = GetAmmoInPedWeapon(ESX.PlayerData.ped, GetHashKey(v.name))
-								--local ammoBool, ammoMax = GetMaxAmmo(ESX.PlayerData.ped, GetHashKey(v.name))
-								TriggerServerEvent('esx:updateWeaponAmmo', v.name, ammoCount)
-								--print("UPDATE WEAPON: ", v.name, ammoCount, ammoMax)
+						local sleep = 1500
+						if GetSelectedPedWeapon(ESX.PlayerData.ped) ~= -1569615261 then
+							sleep = 1000
+							local _,weaponHash = GetCurrentPedWeapon(ESX.PlayerData.ped, true)
+							local weapon = ESX.GetWeaponFromHash(weaponHash) 
+							if weapon then
+								local ammoCount = GetAmmoInPedWeapon(ESX.PlayerData.ped, weaponHash)
+								if weapon.name ~= currentWeapon.name then 
+									currentWeapon.Ammo = ammoCount
+									currentWeapon.name = weapon.name
+								else
+									if ammoCount ~= currentWeapon.Ammo then
+										currentWeapon.Ammo = ammoCount
+										TriggerServerEvent('esx:updateWeaponAmmo', weapon.name, ammoCount)
+									end 
+								end   
 							end
 							
 							for k,v in ipairs(ESX.PlayerData.ammotypes) do
