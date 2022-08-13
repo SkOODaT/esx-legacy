@@ -25,13 +25,13 @@ local function getNearbyPlayers(source, closest, distance, ignore)
 			local coords = GetEntityCoords(entity)
 
 			if not closest then
-				local dist = #(xPlayer.source - coords)
+				local dist = #(source - coords)
 				if dist <= distance then
 					count += 1
 					result[count] = {id = xPlayer.source, ped = NetworkGetNetworkIdFromEntity(entity), coords = coords, dist = dist}
 				end
 			else
-				local dist = #(xPlayer.source - coords)
+				local dist = #(source - coords)
 				if dist <= (result.dist or distance) then
 					result = {id = xPlayer.source, ped = NetworkGetNetworkIdFromEntity(entity), coords = coords, dist = dist}
 				end
@@ -45,8 +45,8 @@ end
 ---@param source vector3|number playerId or vector3 coordinates
 ---@param maxDistance number
 ---@param ignore table playerIds to ignore, where the key is playerId and value is true
-function ESX.OneSync.GetPlayersInArea(source, maxDistance, ignore, cb)
-	cb(getNearbyPlayers(source, false, maxDistance, ignore))
+function ESX.OneSync.GetPlayersInArea(source, maxDistance, ignore)
+	return getNearbyPlayers(source, false, maxDistance, ignore)
 end
 
 ---@param source vector3|number playerId or vector3 coordinates
@@ -61,13 +61,19 @@ end
 ---@param heading number
 ---@param cb function
 function ESX.OneSync.SpawnVehicle(model, coords, heading, autoMobile, cb)
-	if type(model) == 'string' then model = GetHashKey(model) end
-	local vector = type(coords) == "vector3" and coords or vec(coords.x, coords.y, coords.z)
-	if type(autoMobile) ~= 'boolean' then
-    return
-  end
-	local Entity = autoMobile and Citizen.InvokeNative(`CREATE_AUTOMOBILE`, model, coords.x, coords.y, coords.z, heading) or CreateVehicle(model, coords, heading, true, true)
-	cb(NetworkGetNetworkIdFromEntity(Entity))
+		if type(model) == 'string' then model = GetHashKey(model) end
+		local vector = type(coords) == "vector3" and coords or vec(coords.x, coords.y, coords.z)
+		if type(autoMobile) ~= 'boolean' then
+			return
+		end
+		CreateThread(function()
+		local Entity = autoMobile and Citizen.InvokeNative(`CREATE_AUTOMOBILE`, model, coords.x, coords.y, coords.z, heading) or CreateVehicle(model, coords, heading, true, true)
+		while not DoesEntityExist(Entity) do
+			Wait(0)
+		end
+		local netID = NetworkGetNetworkIdFromEntity(Entity)
+		cb(netID)
+	end)
 end
 
 ---@param model number|string
