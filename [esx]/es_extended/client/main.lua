@@ -440,10 +440,10 @@ AddEventHandler('esx:spawnVehicle', function(vehicle)
 					SetVehicleDirtLevel(vehicle, 0)
 					SetVehicleFuelLevel(vehicle, 100.0)
 			    -- SetVehicleCustomSecondaryColour(vehicle, 55, 140, 191) -- ESX Blue
-					-- SetVehicleCustomPrimaryColour(vehicle, 0, 0, 0) -- white
 					SetEntityAsMissionEntity(vehicle, true, true) -- Persistant Vehicle
 
 					-- Max out vehicle upgrades
+					if Config.MaxAdminVehicles then 
 						SetVehicleExplodesOnHighExplosionDamage(vehicle, true)
 						SetVehicleModKit(vehicle, 0)
 						SetVehicleMod(vehicle, 11, 3, false) -- modEngine
@@ -461,6 +461,7 @@ AddEventHandler('esx:spawnVehicle', function(vehicle)
 							SetVehicleNeonLightEnabled(vehicle, i, true)
 						end
 						SetVehicleNeonLightsColour(vehicle, 55, 140, 191)  -- ESX Blue
+					end
 				end)
 			else
 				ESX.ShowNotification('Invalid vehicle model.')
