@@ -165,15 +165,21 @@ ESX.RegisterCommand("property:refresh", Config.AllowedGroups, function(xPlayer)
   PropertiesRefresh()
 end, false, {help = "Refresh Properties"})
 
+ESX.RegisterCommand("property:save", Config.AllowedGroups, function(xPlayer)
+  SaveResourceFile(GetCurrentResourceName(), 'properties.json', json.encode(Properties))
+    Log("Properties Saving", 11141375,
+      {{name = "**Reason**", value = "Requsted By Admin", inline = true}, {name = "**Property Count**", value = tostring(#Properties), inline = true}}, 1)
+end, false, {help = "Force Save Properties"})
+
 ESX.RegisterCommand("property:create", "user", function(xPlayer)
   if IsPlayerAdmin(xPlayer.source) or (PM.Enabled and xPlayer.job.name == PM.job) then
     xPlayer.triggerEvent("esx_property:CreateProperty")
   end
-end, false, {help = "Refresh Properties"})
+end, false, {help = "Create A New Property"})
 
 ESX.RegisterCommand("property:admin", Config.AllowedGroups, function(xPlayer)
   xPlayer.triggerEvent("esx_property:AdminMenu")
-end, false, {help = "Refresh Properties"})
+end, false, {help = "Manage/view all properties"})
 
 -- Buy Property
 ESX.RegisterServerCallback("esx_property:buyProperty", function(source, cb, PropertyId)
@@ -475,7 +481,7 @@ ESX.RegisterServerCallback("esx_property:deleteProperty", function(source, cb, P
        {name = "**Admin**", value = xPlayer.getName(), inline = true},
        {name = "**Owner**", value = Properties[PropertyId].OwnerName ~= "" and Properties[PropertyId].OwnerName or "N/A", inline = true},
        {name = "**Furniture Count**", value = #(Properties[PropertyId].furniture), inline = true},
-       {name = "**Vehicle Count**", value = #(Properties[PropertyId].garage.StoredVehicles), inline = true}}, 1)
+       {name = "**Vehicle Count**", value = Properties[PropertyId].garage.StoredVehicles and #(Properties[PropertyId].garage.StoredVehicles) or "N/A", inline = true}}, 1)
     table.remove(Properties, PropertyId)
     TriggerClientEvent("esx_property:syncProperties", -1, Properties)
     if Config.OxInventory then
@@ -845,6 +851,7 @@ ESX.RegisterServerCallback('esx_property:StoreVehicle', function(source, cb, Pro
                                                                                                            vehicle = VehicleProperties}
         cb(true)
       end
+      MySQL.query(Config.Garage.MySQLquery, {1, VehicleProperties.plate}) -- Set vehicle as stored in MySQL
     else
       xPlayer.showNotification('Garage Not Enabled On This Property.', 'error')
       cb(false)
@@ -1006,11 +1013,12 @@ RegisterNetEvent('esx_property:leave', function(PropertyId)
 end)
 
 RegisterNetEvent('esx_property:SetVehicleOut', function(PropertyId, VehIndex)
-  local source = source
-  local Property = Properties[PropertyId]
-  local xPlayer = ESX.GetPlayerFromId(source)
+  local VehicleData = Properties[PropertyId].garage.StoredVehicles[VehIndex]
+  local plate = VehicleData.vehicle.plate
   table.remove(Properties[PropertyId].garage.StoredVehicles, VehIndex)
+  MySQL.query(Config.Garage.MySQLquery, {0, plate}) -- Set vehicle as no longer stored
 end)
+
 
 AddEventHandler('playerDropped', function()
   local source = source
