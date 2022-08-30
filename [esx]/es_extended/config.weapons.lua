@@ -19,16 +19,16 @@ Config.Weapons = {
 		label = _U('weapon_knuckle'),
 		ammo = {hash = 'AMMO_NONE'},
 		components = {
-			{name = 'knuckle_base', label = _U('component_knuckle_base'), hash = GetHashKey("COMPONENT_KNUCKLE_VARMOD_BASE")},
-			{name = 'knuckle_pimp', label = _U('component_knuckle_pimp'), hash = GetHashKey("COMPONENT_KNUCKLE_VARMOD_PIMP")},
-			{name = 'knuckle_ballas', label = _U('component_knuckle_ballas'), hash = GetHashKey("COMPONENT_KNUCKLE_VARMOD_BALLAS")},
-			{name = 'knuckle_dollar', label = _U('component_knuckle_dollar'), hash = GetHashKey("COMPONENT_KNUCKLE_VARMOD_DOLLAR")},
-			{name = 'knuckle_diamond', label = _U('component_knuckle_diamond'), hash = GetHashKey("COMPONENT_KNUCKLE_VARMOD_DIAMOND")},
-			{name = 'knuckle_hate', label = _U('component_knuckle_hate'), hash = GetHashKey("COMPONENT_KNUCKLE_VARMOD_HATE")},
-			{name = 'knuckle_love', label = _U('component_knuckle_love'), hash = GetHashKey("COMPONENT_KNUCKLE_VARMOD_LOVE")},
-			{name = 'knuckle_player', label = _U('component_knuckle_player'), hash = GetHashKey("COMPONENT_KNUCKLE_VARMOD_PLAYER")},
-			{name = 'knuckle_king', label = _U('component_knuckle_king'), hash = GetHashKey("COMPONENT_KNUCKLE_VARMOD_KING")},
-			{name = 'knuckle_vagos', label = _U('component_knuckle_vagos'), hash = GetHashKey("COMPONENT_KNUCKLE_VARMOD_VAGOS")}
+			{name = 'knuckle_base', label = _U('component_knuckle_base'), hash = `COMPONENT_KNUCKLE_VARMOD_BASE`},
+			{name = 'knuckle_pimp', label = _U('component_knuckle_pimp'), hash = `COMPONENT_KNUCKLE_VARMOD_PIMP`},
+			{name = 'knuckle_ballas', label = _U('component_knuckle_ballas'), hash = `COMPONENT_KNUCKLE_VARMOD_BALLAS`},
+			{name = 'knuckle_dollar', label = _U('component_knuckle_dollar'), hash = `COMPONENT_KNUCKLE_VARMOD_DOLLAR`},
+			{name = 'knuckle_diamond', label = _U('component_knuckle_diamond'), hash = `COMPONENT_KNUCKLE_VARMOD_DIAMOND`},
+			{name = 'knuckle_hate', label = _U('component_knuckle_hate'), hash = `COMPONENT_KNUCKLE_VARMOD_HATE`},
+			{name = 'knuckle_love', label = _U('component_knuckle_love'), hash = `COMPONENT_KNUCKLE_VARMOD_LOVE`},
+			{name = 'knuckle_player', label = _U('component_knuckle_player'), hash = `COMPONENT_KNUCKLE_VARMOD_PLAYER`},
+			{name = 'knuckle_king', label = _U('component_knuckle_king'), hash = `COMPONENT_KNUCKLE_VARMOD_KING`},
+			{name = 'knuckle_vagos', label = _U('component_knuckle_vagos'), hash = `COMPONENT_KNUCKLE_VARMOD_VAGOS`}
 		}
 	},
 	{name = 'WEAPON_BOTTLE', label = _U('weapon_bottle'), components = {}, ammo = {hash = 'AMMO_NONE'}},
@@ -48,9 +48,9 @@ Config.Weapons = {
 		label = _U('weapon_switchblade'),
 		ammo = {hash = 'AMMO_NONE'},
 		components = {
-			{name = 'handle_default', label = _U('component_handle_default'), hash = GetHashKey("COMPONENT_SWITCHBLADE_VARMOD_BASE")},
-			{name = 'handle_vip', label = _U('component_handle_vip'), hash = GetHashKey("COMPONENT_SWITCHBLADE_VARMOD_VAR1")},
-			{name = 'handle_bodyguard', label = _U('component_handle_bodyguard'), hash = GetHashKey("COMPONENT_SWITCHBLADE_VARMOD_VAR2")}
+			{name = 'handle_default', label = _U('component_handle_default'), hash = `COMPONENT_SWITCHBLADE_VARMOD_BASE`},
+			{name = 'handle_vip', label = _U('component_handle_vip'), hash = `COMPONENT_SWITCHBLADE_VARMOD_VAR1`},
+			{name = 'handle_bodyguard', label = _U('component_handle_bodyguard'), hash = `COMPONENT_SWITCHBLADE_VARMOD_VAR2`}
 		}
 	},
 	-- Handguns
@@ -60,11 +60,11 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_APPISTOL_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_APPISTOL_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_PI_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_SUPP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_APPISTOL_VARMOD_LUXE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_APPISTOL_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_APPISTOL_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_PI_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_SUPP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_APPISTOL_VARMOD_LUXE`}
 		}
 	},
 	{name = 'WEAPON_CERAMICPISTOL', label = _U('weapon_ceramicpistol'), tints = Config.DefaultWeaponTints, components = {}, ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'}},
@@ -74,11 +74,11 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_COMBATPISTOL_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_COMBATPISTOL_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_PI_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_SUPP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_COMBATPISTOL_VARMOD_LOWRIDER")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_COMBATPISTOL_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_COMBATPISTOL_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_PI_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_SUPP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_COMBATPISTOL_VARMOD_LOWRIDER`}
 		}
 	},
 	{name = 'WEAPON_DOUBLEACTION', label = _U('weapon_doubleaction'), tints = Config.DefaultWeaponTints, components = {}, ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'}},
@@ -91,11 +91,11 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_HEAVYPISTOL_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_HEAVYPISTOL_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_PI_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_SUPP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_HEAVYPISTOL_VARMOD_LUXE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_HEAVYPISTOL_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_HEAVYPISTOL_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_PI_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_SUPP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_HEAVYPISTOL_VARMOD_LUXE`}
 		}
 	},
 	{
@@ -104,9 +104,9 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'),hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_REVOLVER_CLIP_01")},
-			{name = 'vip_finish', label = _U('component_vip_finish'), hash = GetHashKey("COMPONENT_REVOLVER_VARMOD_BOSS")},
-			{name = 'bodyguard_finish', label = _U('component_bodyguard_finish'), hash = GetHashKey("COMPONENT_REVOLVER_VARMOD_GOON")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_REVOLVER_CLIP_01`},
+			{name = 'vip_finish', label = _U('component_vip_finish'), hash = `COMPONENT_REVOLVER_VARMOD_BOSS`},
+			{name = 'bodyguard_finish', label = _U('component_bodyguard_finish'), hash = `COMPONENT_REVOLVER_VARMOD_GOON`}
 		}
 	},
 	{
@@ -115,26 +115,26 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'),hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CLIP_01")},
-			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CLIP_TRACER")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_hollowpoint', label = _U('component_ammo_hollowpoint'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CLIP_HOLLOWPOINT")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CLIP_FMJ")},
-			{name = 'scope_holo', label = _U('component_scope_holo'), hash = GetHashKey("COMPONENT_AT_SIGHTS")},
-			{name = 'scope_small', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO_MK2")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_PI_FLSH")},
-			{name = 'compensator', label = _U('component_compensator'), hash = GetHashKey("COMPONENT_AT_PI_COMP_03")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_REVOLVER_MK2_CAMO_IND_01")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_REVOLVER_MK2_CLIP_01`},
+			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = `COMPONENT_REVOLVER_MK2_CLIP_TRACER`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_REVOLVER_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_hollowpoint', label = _U('component_ammo_hollowpoint'), hash = `COMPONENT_REVOLVER_MK2_CLIP_HOLLOWPOINT`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_REVOLVER_MK2_CLIP_FMJ`},
+			{name = 'scope_holo', label = _U('component_scope_holo'), hash = `COMPONENT_AT_SIGHTS`},
+			{name = 'scope_small', label = _U('component_ammo_fmj'), hash = `COMPONENT_AT_SCOPE_MACRO_MK2`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_PI_FLSH`},
+			{name = 'compensator', label = _U('component_compensator'), hash = `COMPONENT_AT_PI_COMP_03`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_REVOLVER_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_REVOLVER_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_REVOLVER_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_REVOLVER_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_REVOLVER_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_REVOLVER_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_REVOLVER_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_REVOLVER_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_REVOLVER_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_REVOLVER_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_REVOLVER_MK2_CAMO_IND_01`}
 		}
 	},
 	{name = 'WEAPON_MARKSMANPISTOL', label = _U('weapon_marksmanpistol'), tints = Config.DefaultWeaponTints, components = {}, ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'}},
@@ -144,11 +144,11 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_PISTOL_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_PISTOL_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_PI_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_SUPP_02")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_PISTOL_VARMOD_LUXE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_PISTOL_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_PISTOL_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_PI_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_SUPP_02`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_PISTOL_VARMOD_LUXE`}
 		}
 	},
 	{
@@ -157,38 +157,38 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CLIP_02")},
-			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CLIP_TRACER")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_hollowpoint', label = _U('component_ammo_hollowpoint'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CLIP_HOLLOWPOINT")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CLIP_FMJ")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_PI_RAIL")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_PI_FLSH_02")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_SUPP_02")},
-			{name = 'compensator', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_COMP")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_IND_01")},
-			{name = 'camo_slide_finish', label = _U('component_camo_slide_finish'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_SLIDE")},
-			{name = 'camo_slide_finish2', label = _U('component_camo_slide_finish2'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_02_SLIDE")},
-			{name = 'camo_slide_finish3', label = _U('component_camo_slide_finish3'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_03_SLIDE")},
-			{name = 'camo_slide_finish4', label = _U('component_camo_slide_finish4'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_04_SLIDE")},
-			{name = 'camo_slide_finish5', label = _U('component_camo_slide_finish5'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_05_SLIDE")},
-			{name = 'camo_slide_finish6', label = _U('component_camo_slide_finish6'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_06_SLIDE")},
-			{name = 'camo_slide_finish7', label = _U('component_camo_slide_finish7'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_07_SLIDE")},
-			{name = 'camo_slide_finish8', label = _U('component_camo_slide_finish8'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_08_SLIDE")},
-			{name = 'camo_slide_finish9', label = _U('component_camo_slide_finish9'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_09_SLIDE")},
-			{name = 'camo_slide_finish10', label = _U('component_camo_slide_finish10'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_10_SLIDE")},
-			{name = 'camo_slide_finish11', label = _U('component_camo_slide_finish11'), hash = GetHashKey("COMPONENT_PISTOL_MK2_CAMO_IND_01_SLIDE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_PISTOL_MK2_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_PISTOL_MK2_CLIP_02`},
+			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = `COMPONENT_PISTOL_MK2_CLIP_TRACER`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_PISTOL_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_hollowpoint', label = _U('component_ammo_hollowpoint'), hash = `COMPONENT_PISTOL_MK2_CLIP_HOLLOWPOINT`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_PISTOL_MK2_CLIP_FMJ`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_PI_RAIL`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_PI_FLSH_02`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_SUPP_02`},
+			{name = 'compensator', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_COMP`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_PISTOL_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_PISTOL_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_PISTOL_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_PISTOL_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_PISTOL_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_PISTOL_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_PISTOL_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_PISTOL_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_PISTOL_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_PISTOL_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_PISTOL_MK2_CAMO_IND_01`},
+			{name = 'camo_slide_finish', label = _U('component_camo_slide_finish'), hash = `COMPONENT_PISTOL_MK2_CAMO_SLIDE`},
+			{name = 'camo_slide_finish2', label = _U('component_camo_slide_finish2'), hash = `COMPONENT_PISTOL_MK2_CAMO_02_SLIDE`},
+			{name = 'camo_slide_finish3', label = _U('component_camo_slide_finish3'), hash = `COMPONENT_PISTOL_MK2_CAMO_03_SLIDE`},
+			{name = 'camo_slide_finish4', label = _U('component_camo_slide_finish4'), hash = `COMPONENT_PISTOL_MK2_CAMO_04_SLIDE`},
+			{name = 'camo_slide_finish5', label = _U('component_camo_slide_finish5'), hash = `COMPONENT_PISTOL_MK2_CAMO_05_SLIDE`},
+			{name = 'camo_slide_finish6', label = _U('component_camo_slide_finish6'), hash = `COMPONENT_PISTOL_MK2_CAMO_06_SLIDE`},
+			{name = 'camo_slide_finish7', label = _U('component_camo_slide_finish7'), hash = `COMPONENT_PISTOL_MK2_CAMO_07_SLIDE`},
+			{name = 'camo_slide_finish8', label = _U('component_camo_slide_finish8'), hash = `COMPONENT_PISTOL_MK2_CAMO_08_SLIDE`},
+			{name = 'camo_slide_finish9', label = _U('component_camo_slide_finish9'), hash = `COMPONENT_PISTOL_MK2_CAMO_09_SLIDE`},
+			{name = 'camo_slide_finish10', label = _U('component_camo_slide_finish10'), hash = `COMPONENT_PISTOL_MK2_CAMO_10_SLIDE`},
+			{name = 'camo_slide_finish11', label = _U('component_camo_slide_finish11'), hash = `COMPONENT_PISTOL_MK2_CAMO_IND_01_SLIDE`}
 		}
 	},
 	{
@@ -197,11 +197,11 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_PISTOL50_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_PISTOL50_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_PI_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_PISTOL50_VARMOD_LUXE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_PISTOL50_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_PISTOL50_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_PI_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_PISTOL50_VARMOD_LUXE`}
 		}
 	},
 	{
@@ -210,9 +210,9 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_SNSPISTOL_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_SNSPISTOL_CLIP_02")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_SNSPISTOL_VARMOD_LOWRIDER")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_SNSPISTOL_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_SNSPISTOL_CLIP_02`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_SNSPISTOL_VARMOD_LOWRIDER`}
 		}
 	},
 	{
@@ -221,38 +221,38 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CLIP_02")},
-			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CLIP_TRACER")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_hollowpoint', label = _U('component_ammo_hollowpoint'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CLIP_HOLLOWPOINT")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CLIP_FMJ")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_PI_RAIL_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_PI_FLSH_03")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_SUPP_02")},
-			{name = 'compensator', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_COMP_02")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_IND_01")},
-			{name = 'camo_slide_finish', label = _U('component_camo_slide_finish'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_SLIDE")},
-			{name = 'camo_slide_finish2', label = _U('component_camo_slide_finish2'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_02_SLIDE")},
-			{name = 'camo_slide_finish3', label = _U('component_camo_slide_finish3'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_03_SLIDE")},
-			{name = 'camo_slide_finish4', label = _U('component_camo_slide_finish4'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_04_SLIDE")},
-			{name = 'camo_slide_finish5', label = _U('component_camo_slide_finish5'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_05_SLIDE")},
-			{name = 'camo_slide_finish6', label = _U('component_camo_slide_finish6'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_06_SLIDE")},
-			{name = 'camo_slide_finish7', label = _U('component_camo_slide_finish7'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_07_SLIDE")},
-			{name = 'camo_slide_finish8', label = _U('component_camo_slide_finish8'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_08_SLIDE")},
-			{name = 'camo_slide_finish9', label = _U('component_camo_slide_finish9'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_09_SLIDE")},
-			{name = 'camo_slide_finish10', label = _U('component_camo_slide_finish10'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_10_SLIDE")},
-			{name = 'camo_slide_finish11', label = _U('component_camo_slide_finish11'), hash = GetHashKey("COMPONENT_SNSPISTOL_MK2_CAMO_IND_01_SLIDE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_SNSPISTOL_MK2_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_SNSPISTOL_MK2_CLIP_02`},
+			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = `COMPONENT_SNSPISTOL_MK2_CLIP_TRACER`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_SNSPISTOL_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_hollowpoint', label = _U('component_ammo_hollowpoint'), hash = `COMPONENT_SNSPISTOL_MK2_CLIP_HOLLOWPOINT`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_SNSPISTOL_MK2_CLIP_FMJ`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_PI_RAIL_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_PI_FLSH_03`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_SUPP_02`},
+			{name = 'compensator', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_COMP_02`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_IND_01`},
+			{name = 'camo_slide_finish', label = _U('component_camo_slide_finish'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_SLIDE`},
+			{name = 'camo_slide_finish2', label = _U('component_camo_slide_finish2'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_02_SLIDE`},
+			{name = 'camo_slide_finish3', label = _U('component_camo_slide_finish3'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_03_SLIDE`},
+			{name = 'camo_slide_finish4', label = _U('component_camo_slide_finish4'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_04_SLIDE`},
+			{name = 'camo_slide_finish5', label = _U('component_camo_slide_finish5'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_05_SLIDE`},
+			{name = 'camo_slide_finish6', label = _U('component_camo_slide_finish6'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_06_SLIDE`},
+			{name = 'camo_slide_finish7', label = _U('component_camo_slide_finish7'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_07_SLIDE`},
+			{name = 'camo_slide_finish8', label = _U('component_camo_slide_finish8'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_08_SLIDE`},
+			{name = 'camo_slide_finish9', label = _U('component_camo_slide_finish9'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_09_SLIDE`},
+			{name = 'camo_slide_finish10', label = _U('component_camo_slide_finish10'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_10_SLIDE`},
+			{name = 'camo_slide_finish11', label = _U('component_camo_slide_finish11'), hash = `COMPONENT_SNSPISTOL_MK2_CAMO_IND_01_SLIDE`}
 		}
 	},
 	{name = 'WEAPON_STUNGUN', label = _U('weapon_stungun'), tints = Config.DefaultWeaponTints, components = {}, ammo = {hash = 'AMMO_NONE'}},
@@ -263,9 +263,9 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_PISTOL'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_VINTAGEPISTOL_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_VINTAGEPISTOL_CLIP_02")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_SUPP")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_VINTAGEPISTOL_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_VINTAGEPISTOL_CLIP_02`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_SUPP`}
 		}
 	},
 	-- Shotguns
@@ -275,11 +275,11 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_shells'), hash = 'AMMO_SHOTGUN'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_ASSAULTSHOTGUN_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_ASSAULTSHOTGUN_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_ASSAULTSHOTGUN_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_ASSAULTSHOTGUN_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`}
 		}
 	},
 	{name = 'WEAPON_AUTOSHOTGUN', label = _U('weapon_autoshotgun'), tints = Config.DefaultWeaponTints, components = {}, ammo = {label = _U('ammo_shells'), hash = 'AMMO_SHOTGUN'}},
@@ -289,9 +289,9 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_shells'), hash = 'AMMO_SHOTGUN'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")}
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`}
 		}
 	},
 	{
@@ -300,8 +300,8 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_shells'), hash = 'AMMO_SHOTGUN'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP")}
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP`}
 		}
 	},
 	{name = 'WEAPON_DBSHOTGUN', label = _U('weapon_dbshotgun'), tints = Config.DefaultWeaponTints, components = {}, ammo = {label = _U('ammo_shells'), hash = 'AMMO_SHOTGUN'}},
@@ -311,12 +311,12 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_shells'), hash = 'AMMO_SHOTGUN'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_HEAVYSHOTGUN_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_HEAVYSHOTGUN_CLIP_02")},
-			{name = 'clip_drum', label = _U('component_clip_drum'), hash = GetHashKey("COMPONENT_HEAVYSHOTGUN_CLIP_03")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_HEAVYSHOTGUN_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_HEAVYSHOTGUN_CLIP_02`},
+			{name = 'clip_drum', label = _U('component_clip_drum'), hash = `COMPONENT_HEAVYSHOTGUN_CLIP_03`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`}
 		}
 	},
 	{name = 'WEAPON_MUSKET', label = _U('weapon_musket'), tints = Config.DefaultWeaponTints, components = {}, ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SHOTGUN'}},
@@ -326,9 +326,9 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_shells'), hash = 'AMMO_SHOTGUN'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_SR_SUPP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_VARMOD_LOWRIDER")}
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_SR_SUPP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_PUMPSHOTGUN_VARMOD_LOWRIDER`}
 		}
 	},
 	{
@@ -337,28 +337,28 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_shells'), hash = 'AMMO_SHOTGUN'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'shells_default', label = _U('component_shells_default'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CLIP_01")},
-			{name = 'shells_incendiary', label = _U('component_shells_incendiary'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CLIP_INCENDIARY")},
-			{name = 'shells_armor', label = _U('component_shells_armor'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CLIP_ARMORPIERCING")},
-			{name = 'shells_hollowpoint', label = _U('component_shells_hollowpoint'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CLIP_HOLLOWPOINT")},
-			{name = 'shells_explosive', label = _U('component_shells_explosive'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CLIP_EXPLOSIVE")},
-			{name = 'scope_holo', label = _U('component_scope_holo'), hash = GetHashKey("COMPONENT_AT_SIGHTS")},
-			{name = 'scope_small', label = _U('component_scope_small'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO_MK2")},
-			{name = 'scope_medium', label = _U('component_scope_medium'), hash = GetHashKey("COMPONENT_AT_SCOPE_SMALL_MK2")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_SR_SUPP_03")},
-			{name = 'muzzle_squared', label = _U('component_muzzle_squared'), hash = GetHashKey("COMPONENT_AT_MUZZLE_08")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_PUMPSHOTGUN_MK2_CAMO_IND_01")}
+			{name = 'shells_default', label = _U('component_shells_default'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CLIP_01`},
+			{name = 'shells_incendiary', label = _U('component_shells_incendiary'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CLIP_INCENDIARY`},
+			{name = 'shells_armor', label = _U('component_shells_armor'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CLIP_ARMORPIERCING`},
+			{name = 'shells_hollowpoint', label = _U('component_shells_hollowpoint'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CLIP_HOLLOWPOINT`},
+			{name = 'shells_explosive', label = _U('component_shells_explosive'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CLIP_EXPLOSIVE`},
+			{name = 'scope_holo', label = _U('component_scope_holo'), hash = `COMPONENT_AT_SIGHTS`},
+			{name = 'scope_small', label = _U('component_scope_small'), hash = `COMPONENT_AT_SCOPE_MACRO_MK2`},
+			{name = 'scope_medium', label = _U('component_scope_medium'), hash = `COMPONENT_AT_SCOPE_SMALL_MK2`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_SR_SUPP_03`},
+			{name = 'muzzle_squared', label = _U('component_muzzle_squared'), hash = `COMPONENT_AT_MUZZLE_08`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_PUMPSHOTGUN_MK2_CAMO_IND_01`}
 		}
 	},
 	{
@@ -367,7 +367,7 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_shells'), hash = 'AMMO_SHOTGUN'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_SAWNOFFSHOTGUN_VARMOD_LUXE")}
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_SAWNOFFSHOTGUN_VARMOD_LUXE`}
 		}
 	},
 	-- SMG & LMG
@@ -377,12 +377,12 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SMG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_ASSAULTSMG_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_ASSAULTSMG_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_ASSAULTSMG_VARMOD_LOWRIDER")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_ASSAULTSMG_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_ASSAULTSMG_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_MACRO`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_ASSAULTSMG_VARMOD_LOWRIDER`}
 		}
 	},
 	{
@@ -391,11 +391,11 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_MG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_COMBATMG_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_COMBATMG_CLIP_02")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_MEDIUM")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_COMBATMG_VARMOD_LOWRIDER")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_COMBATMG_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_COMBATMG_CLIP_02`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_MEDIUM`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_COMBATMG_VARMOD_LOWRIDER`}
 		}
 	},
 	{
@@ -404,36 +404,36 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_MG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CLIP_02")},
-			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CLIP_TRACER")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_hollowpoint', label = _U('component_ammo_hollowpoint'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CLIP_ARMORPIERCING")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CLIP_FMJ")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP_02")},
-			{name = 'scope_holo', label = _U('component_scope_holo'), hash = GetHashKey("COMPONENT_AT_SIGHTS")},
-			{name = 'scope_medium', label = _U('component_scope_medium'), hash = GetHashKey("COMPONENT_AT_SCOPE_SMALL_MK2")},
-			{name = 'scope_large', label = _U('component_scope_large'), hash = GetHashKey("COMPONENT_AT_SCOPE_MEDIUM_MK2")},
-			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_01")},
-			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = GetHashKey("COMPONENT_AT_MUZZLE_02")},
-			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_03")},
-			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = GetHashKey("COMPONENT_AT_MUZZLE_04")},
-			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = GetHashKey("COMPONENT_AT_MUZZLE_05")},
-			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = GetHashKey("COMPONENT_AT_MUZZLE_06")},
-			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = GetHashKey("COMPONENT_AT_MUZZLE_07")},
-			{name = 'barrel_default', label = _U('component_barrel_default'), hash = GetHashKey("COMPONENT_AT_MG_BARREL_01")},
-			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = GetHashKey("COMPONENT_AT_MG_BARREL_02")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_COMBATMG_MK2_CAMO_IND_01")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_COMBATMG_MK2_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_COMBATMG_MK2_CLIP_02`},
+			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = `COMPONENT_COMBATMG_MK2_CLIP_TRACER`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_COMBATMG_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_hollowpoint', label = _U('component_ammo_hollowpoint'), hash = `COMPONENT_COMBATMG_MK2_CLIP_ARMORPIERCING`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_COMBATMG_MK2_CLIP_FMJ`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP_02`},
+			{name = 'scope_holo', label = _U('component_scope_holo'), hash = `COMPONENT_AT_SIGHTS`},
+			{name = 'scope_medium', label = _U('component_scope_medium'), hash = `COMPONENT_AT_SCOPE_SMALL_MK2`},
+			{name = 'scope_large', label = _U('component_scope_large'), hash = `COMPONENT_AT_SCOPE_MEDIUM_MK2`},
+			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = `COMPONENT_AT_MUZZLE_01`},
+			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = `COMPONENT_AT_MUZZLE_02`},
+			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = `COMPONENT_AT_MUZZLE_03`},
+			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = `COMPONENT_AT_MUZZLE_04`},
+			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = `COMPONENT_AT_MUZZLE_05`},
+			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = `COMPONENT_AT_MUZZLE_06`},
+			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = `COMPONENT_AT_MUZZLE_07`},
+			{name = 'barrel_default', label = _U('component_barrel_default'), hash = `COMPONENT_AT_MG_BARREL_01`},
+			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = `COMPONENT_AT_MG_BARREL_02`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_COMBATMG_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_COMBATMG_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_COMBATMG_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_COMBATMG_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_COMBATMG_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_COMBATMG_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_COMBATMG_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_COMBATMG_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_COMBATMG_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_COMBATMG_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_COMBATMG_MK2_CAMO_IND_01`}
 		}
 	},
 	{
@@ -442,12 +442,12 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SMG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_COMBATPDW_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_COMBATPDW_CLIP_02")},
-			{name = 'clip_drum', label = _U('component_clip_drum'), hash = GetHashKey("COMPONENT_COMBATPDW_CLIP_03")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_SMALL")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_COMBATPDW_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_COMBATPDW_CLIP_02`},
+			{name = 'clip_drum', label = _U('component_clip_drum'), hash = `COMPONENT_COMBATPDW_CLIP_03`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_SMALL`}
 		}
 	},
 	{
@@ -456,8 +456,8 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_MG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_GUSENBERG_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_GUSENBERG_CLIP_02")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_GUSENBERG_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_GUSENBERG_CLIP_02`}
 		}
 	},
 	{
@@ -466,10 +466,10 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SMG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_MACHINEPISTOL_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_MACHINEPISTOL_CLIP_02")},
-			{name = 'clip_drum', label = _U('component_clip_drum'), hash = GetHashKey("COMPONENT_MACHINEPISTOL_CLIP_03")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_SUPP")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_MACHINEPISTOL_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_MACHINEPISTOL_CLIP_02`},
+			{name = 'clip_drum', label = _U('component_clip_drum'), hash = `COMPONENT_MACHINEPISTOL_CLIP_03`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_SUPP`}
 		}
 	},
 	{
@@ -478,10 +478,10 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_MG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_MG_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_MG_CLIP_02")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_SMALL_02")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_MG_VARMOD_LOWRIDER")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_MG_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_MG_CLIP_02`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_SMALL_02`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_MG_VARMOD_LOWRIDER`}
 		}
 	},
 	{
@@ -490,12 +490,12 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SMG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_MICROSMG_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_MICROSMG_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_PI_FLSH")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_MICROSMG_VARMOD_LUXE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_MICROSMG_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_MICROSMG_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_PI_FLSH`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_MACRO`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_MICROSMG_VARMOD_LUXE`}
 		}
 	},
 	{
@@ -504,8 +504,8 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SMG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_MINISMG_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_MINISMG_CLIP_02")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_MINISMG_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_MINISMG_CLIP_02`}
 		}
 	},
 	{
@@ -514,13 +514,13 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SMG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_SMG_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_SMG_CLIP_02")},
-			{name = 'clip_drum', label = _U('component_clip_drum'), hash = GetHashKey("COMPONENT_SMG_CLIP_03")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO_02")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_SUPP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_SMG_VARMOD_LUXE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_SMG_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_SMG_CLIP_02`},
+			{name = 'clip_drum', label = _U('component_clip_drum'), hash = `COMPONENT_SMG_CLIP_03`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_MACRO_02`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_SUPP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_SMG_VARMOD_LUXE`}
 		}
 	},
 	{
@@ -529,37 +529,37 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SMG'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_SMG_MK2_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_SMG_MK2_CLIP_02")},
-			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = GetHashKey("COMPONENT_SMG_MK2_CLIP_TRACER")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_SMG_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_hollowpoint', label = _U('component_ammo_hollowpoint'), hash = GetHashKey("COMPONENT_SMG_MK2_CLIP_HOLLOWPOINT")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_SMG_MK2_CLIP_FMJ")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope_holo', label = _U('component_scope_holo'), hash = GetHashKey("COMPONENT_AT_SIGHTS_SMG")},
-			{name = 'scope_small', label = _U('component_scope_small'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO_02_SMG_MK2")},
-			{name = 'scope_medium', label = _U('component_scope_medium'), hash = GetHashKey("COMPONENT_AT_SCOPE_SMALL_SMG_MK2")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_PI_SUPP")},
-			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_01")},
-			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = GetHashKey("COMPONENT_AT_MUZZLE_02")},
-			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_03")},
-			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = GetHashKey("COMPONENT_AT_MUZZLE_04")},
-			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = GetHashKey("COMPONENT_AT_MUZZLE_05")},
-			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = GetHashKey("COMPONENT_AT_MUZZLE_06")},
-			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = GetHashKey("COMPONENT_AT_MUZZLE_07")},
-			{name = 'barrel_default', label = _U('component_barrel_default'), hash = GetHashKey("COMPONENT_AT_SB_BARREL_01")},
-			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = GetHashKey("COMPONENT_AT_SB_BARREL_02")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_SMG_MK2_CAMO_IND_01")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_SMG_MK2_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_SMG_MK2_CLIP_02`},
+			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = `COMPONENT_SMG_MK2_CLIP_TRACER`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_SMG_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_hollowpoint', label = _U('component_ammo_hollowpoint'), hash = `COMPONENT_SMG_MK2_CLIP_HOLLOWPOINT`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_SMG_MK2_CLIP_FMJ`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope_holo', label = _U('component_scope_holo'), hash = `COMPONENT_AT_SIGHTS_SMG`},
+			{name = 'scope_small', label = _U('component_scope_small'), hash = `COMPONENT_AT_SCOPE_MACRO_02_SMG_MK2`},
+			{name = 'scope_medium', label = _U('component_scope_medium'), hash = `COMPONENT_AT_SCOPE_SMALL_SMG_MK2`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_PI_SUPP`},
+			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = `COMPONENT_AT_MUZZLE_01`},
+			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = `COMPONENT_AT_MUZZLE_02`},
+			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = `COMPONENT_AT_MUZZLE_03`},
+			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = `COMPONENT_AT_MUZZLE_04`},
+			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = `COMPONENT_AT_MUZZLE_05`},
+			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = `COMPONENT_AT_MUZZLE_06`},
+			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = `COMPONENT_AT_MUZZLE_07`},
+			{name = 'barrel_default', label = _U('component_barrel_default'), hash = `COMPONENT_AT_SB_BARREL_01`},
+			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = `COMPONENT_AT_SB_BARREL_02`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_SMG_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_SMG_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_SMG_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_SMG_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_SMG_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_SMG_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_SMG_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_SMG_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_SMG_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_SMG_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_SMG_MK2_CAMO_IND_01`}
 		}
 	},
 	{name = 'WEAPON_RAYCARBINE', label = _U('weapon_raycarbine'), ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SMG'}, tints = Config.DefaultWeaponTints, components = {}},
@@ -570,12 +570,12 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_ADVANCEDRIFLE_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_ADVANCEDRIFLE_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_SMALL")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_ADVANCEDRIFLE_VARMOD_LUXE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_ADVANCEDRIFLE_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_ADVANCEDRIFLE_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_SMALL`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_ADVANCEDRIFLE_VARMOD_LUXE`}
 		}
 	},
 	{
@@ -584,14 +584,14 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_CLIP_02")},
-			{name = 'clip_drum', label = _U('component_clip_drum'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_CLIP_03")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_VARMOD_LUXE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_ASSAULTRIFLE_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_ASSAULTRIFLE_CLIP_02`},
+			{name = 'clip_drum', label = _U('component_clip_drum'), hash = `COMPONENT_ASSAULTRIFLE_CLIP_03`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_MACRO`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_ASSAULTRIFLE_VARMOD_LUXE`}
 		}
 	},
 	{
@@ -600,38 +600,38 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CLIP_02")},
-			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CLIP_TRACER")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CLIP_ARMORPIERCING")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CLIP_FMJ")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope_holo', label = _U('component_scope_holo'), hash = GetHashKey("COMPONENT_AT_SIGHTS")},
-			{name = 'scope_small', label = _U('component_scope_small'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO_MK2")},
-			{name = 'scope_large', label = _U('component_scope_large'), hash = GetHashKey("COMPONENT_AT_SCOPE_MEDIUM_MK2")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")},
-			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_01")},
-			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = GetHashKey("COMPONENT_AT_MUZZLE_02")},
-			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_03")},
-			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = GetHashKey("COMPONENT_AT_MUZZLE_04")},
-			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = GetHashKey("COMPONENT_AT_MUZZLE_05")},
-			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = GetHashKey("COMPONENT_AT_MUZZLE_06")},
-			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = GetHashKey("COMPONENT_AT_MUZZLE_07")},
-			{name = 'barrel_default', label = _U('component_barrel_default'), hash = GetHashKey("COMPONENT_AT_AR_BARREL_01")},
-			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = GetHashKey("COMPONENT_AT_AR_BARREL_02")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_ASSAULTRIFLE_MK2_CAMO_IND_01")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CLIP_02`},
+			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CLIP_TRACER`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CLIP_ARMORPIERCING`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CLIP_FMJ`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope_holo', label = _U('component_scope_holo'), hash = `COMPONENT_AT_SIGHTS`},
+			{name = 'scope_small', label = _U('component_scope_small'), hash = `COMPONENT_AT_SCOPE_MACRO_MK2`},
+			{name = 'scope_large', label = _U('component_scope_large'), hash = `COMPONENT_AT_SCOPE_MEDIUM_MK2`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`},
+			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = `COMPONENT_AT_MUZZLE_01`},
+			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = `COMPONENT_AT_MUZZLE_02`},
+			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = `COMPONENT_AT_MUZZLE_03`},
+			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = `COMPONENT_AT_MUZZLE_04`},
+			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = `COMPONENT_AT_MUZZLE_05`},
+			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = `COMPONENT_AT_MUZZLE_06`},
+			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = `COMPONENT_AT_MUZZLE_07`},
+			{name = 'barrel_default', label = _U('component_barrel_default'), hash = `COMPONENT_AT_AR_BARREL_01`},
+			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = `COMPONENT_AT_AR_BARREL_02`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_ASSAULTRIFLE_MK2_CAMO_IND_01`}
 		}
 	},
 	{
@@ -640,13 +640,13 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_SMALL")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_VARMOD_LOW")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_BULLPUPRIFLE_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_BULLPUPRIFLE_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_SMALL`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_BULLPUPRIFLE_VARMOD_LOW`}
 		}
 	},
 	{
@@ -655,38 +655,38 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CLIP_02")},
-			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CLIP_TRACER")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CLIP_ARMORPIERCING")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CLIP_FMJ")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope_holo', label = _U('component_scope_holo'), hash = GetHashKey("COMPONENT_AT_SIGHTS")},
-			{name = 'scope_small', label = _U('component_scope_small'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO_02_MK2")},
-			{name = 'scope_medium', label = _U('component_scope_medium'), hash = GetHashKey("COMPONENT_AT_SCOPE_SMALL_MK2")},
-			{name = 'barrel_default', label = _U('component_barrel_default'), hash = GetHashKey("COMPONENT_AT_BP_BARREL_01")},
-			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = GetHashKey("COMPONENT_AT_BP_BARREL_02")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP")},
-			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_01")},
-			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = GetHashKey("COMPONENT_AT_MUZZLE_02")},
-			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_03")},
-			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = GetHashKey("COMPONENT_AT_MUZZLE_04")},
-			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = GetHashKey("COMPONENT_AT_MUZZLE_05")},
-			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = GetHashKey("COMPONENT_AT_MUZZLE_06")},
-			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = GetHashKey("COMPONENT_AT_MUZZLE_07")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP_02")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_BULLPUPRIFLE_MK2_CAMO_IND_01")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CLIP_02`},
+			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CLIP_TRACER`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CLIP_ARMORPIERCING`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CLIP_FMJ`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope_holo', label = _U('component_scope_holo'), hash = `COMPONENT_AT_SIGHTS`},
+			{name = 'scope_small', label = _U('component_scope_small'), hash = `COMPONENT_AT_SCOPE_MACRO_02_MK2`},
+			{name = 'scope_medium', label = _U('component_scope_medium'), hash = `COMPONENT_AT_SCOPE_SMALL_MK2`},
+			{name = 'barrel_default', label = _U('component_barrel_default'), hash = `COMPONENT_AT_BP_BARREL_01`},
+			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = `COMPONENT_AT_BP_BARREL_02`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP`},
+			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = `COMPONENT_AT_MUZZLE_01`},
+			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = `COMPONENT_AT_MUZZLE_02`},
+			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = `COMPONENT_AT_MUZZLE_03`},
+			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = `COMPONENT_AT_MUZZLE_04`},
+			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = `COMPONENT_AT_MUZZLE_05`},
+			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = `COMPONENT_AT_MUZZLE_06`},
+			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = `COMPONENT_AT_MUZZLE_07`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP_02`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_BULLPUPRIFLE_MK2_CAMO_IND_01`}
 		}
 	},
 	{
@@ -695,14 +695,14 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_CARBINERIFLE_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_CARBINERIFLE_CLIP_02")},
-			{name = 'clip_box', label = _U('component_clip_box'), hash = GetHashKey("COMPONENT_CARBINERIFLE_CLIP_03")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_MEDIUM")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_CARBINERIFLE_VARMOD_LUXE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_CARBINERIFLE_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_CARBINERIFLE_CLIP_02`},
+			{name = 'clip_box', label = _U('component_clip_box'), hash = `COMPONENT_CARBINERIFLE_CLIP_03`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_MEDIUM`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_CARBINERIFLE_VARMOD_LUXE`}
 		}
 	},
 	{
@@ -711,38 +711,38 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CLIP_02")},
-			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CLIP_TRACER")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CLIP_ARMORPIERCING")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CLIP_FMJ")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope_holo', label = _U('component_scope_holo'), hash = GetHashKey("COMPONENT_AT_SIGHTS")},
-			{name = 'scope_medium', label = _U('component_scope_medium'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO_MK2")},
-			{name = 'scope_large', label = _U('component_scope_large'), hash = GetHashKey("COMPONENT_AT_SCOPE_MEDIUM_MK2")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP")},
-			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_01")},
-			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = GetHashKey("COMPONENT_AT_MUZZLE_02")},
-			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_03")},
-			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = GetHashKey("COMPONENT_AT_MUZZLE_04")},
-			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = GetHashKey("COMPONENT_AT_MUZZLE_05")},
-			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = GetHashKey("COMPONENT_AT_MUZZLE_06")},
-			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = GetHashKey("COMPONENT_AT_MUZZLE_07")},
-			{name = 'barrel_default', label = _U('component_barrel_default'), hash = GetHashKey("COMPONENT_AT_CR_BARREL_01")},
-			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = GetHashKey("COMPONENT_AT_CR_BARREL_02")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_CARBINERIFLE_MK2_CAMO_IND_01")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_CARBINERIFLE_MK2_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_CARBINERIFLE_MK2_CLIP_02`},
+			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = `COMPONENT_CARBINERIFLE_MK2_CLIP_TRACER`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_CARBINERIFLE_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = `COMPONENT_CARBINERIFLE_MK2_CLIP_ARMORPIERCING`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_CARBINERIFLE_MK2_CLIP_FMJ`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope_holo', label = _U('component_scope_holo'), hash = `COMPONENT_AT_SIGHTS`},
+			{name = 'scope_medium', label = _U('component_scope_medium'), hash = `COMPONENT_AT_SCOPE_MACRO_MK2`},
+			{name = 'scope_large', label = _U('component_scope_large'), hash = `COMPONENT_AT_SCOPE_MEDIUM_MK2`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP`},
+			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = `COMPONENT_AT_MUZZLE_01`},
+			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = `COMPONENT_AT_MUZZLE_02`},
+			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = `COMPONENT_AT_MUZZLE_03`},
+			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = `COMPONENT_AT_MUZZLE_04`},
+			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = `COMPONENT_AT_MUZZLE_05`},
+			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = `COMPONENT_AT_MUZZLE_06`},
+			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = `COMPONENT_AT_MUZZLE_07`},
+			{name = 'barrel_default', label = _U('component_barrel_default'), hash = `COMPONENT_AT_CR_BARREL_01`},
+			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = `COMPONENT_AT_CR_BARREL_02`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_CARBINERIFLE_MK2_CAMO_IND_01`}
 		}
 	},
 	{
@@ -751,9 +751,9 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_COMPACTRIFLE_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_COMPACTRIFLE_CLIP_02")},
-			{name = 'clip_drum', label = _U('component_clip_drum'), hash = GetHashKey("COMPONENT_COMPACTRIFLE_CLIP_03")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_COMPACTRIFLE_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_COMPACTRIFLE_CLIP_02`},
+			{name = 'clip_drum', label = _U('component_clip_drum'), hash = `COMPONENT_COMPACTRIFLE_CLIP_03`}
 		}
 	},
 	{
@@ -762,12 +762,12 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_MILITARYRIFLE_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_MILITARYRIFLE_CLIP_02")},
-			{name = 'ironsights', label = _U('component_ironsights'), hash = GetHashKey("COMPONENT_MILITARYRIFLE_SIGHT_01")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_SMALL")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_MILITARYRIFLE_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_MILITARYRIFLE_CLIP_02`},
+			{name = 'ironsights', label = _U('component_ironsights'), hash = `COMPONENT_MILITARYRIFLE_SIGHT_01`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_SMALL`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP`}
 		}
 	},
 	{
@@ -776,14 +776,14 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_CLIP_02")},
-			{name = 'clip_drum', label = _U('component_clip_drum'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_CLIP_03")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_MEDIUM")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_VARMOD_LOWRIDER")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_SPECIALCARBINE_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_SPECIALCARBINE_CLIP_02`},
+			{name = 'clip_drum', label = _U('component_clip_drum'), hash = `COMPONENT_SPECIALCARBINE_CLIP_03`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_MEDIUM`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_SPECIALCARBINE_VARMOD_LOWRIDER`}
 		}
 	},
 	{
@@ -792,38 +792,38 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_RIFLE'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CLIP_02")},
-			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CLIP_TRACER")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CLIP_ARMORPIERCING")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CLIP_FMJ")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope_holo', label = _U('component_scope_holo'), hash = GetHashKey("COMPONENT_AT_SIGHTS")},
-			{name = 'scope_small', label = _U('component_scope_small'), hash = GetHashKey("COMPONENT_AT_SCOPE_MACRO_MK2")},
-			{name = 'scope_large', label = _U('component_scope_large'), hash = GetHashKey("COMPONENT_AT_SCOPE_MEDIUM_MK2")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")},
-			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_01")},
-			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = GetHashKey("COMPONENT_AT_MUZZLE_02")},
-			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_03")},
-			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = GetHashKey("COMPONENT_AT_MUZZLE_04")},
-			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = GetHashKey("COMPONENT_AT_MUZZLE_05")},
-			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = GetHashKey("COMPONENT_AT_MUZZLE_06")},
-			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = GetHashKey("COMPONENT_AT_MUZZLE_07")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP_02")},
-			{name = 'barrel_default', label = _U('component_barrel_default'), hash = GetHashKey("COMPONENT_AT_SC_BARREL_01")},
-			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = GetHashKey("COMPONENT_AT_SC_BARREL_02")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_SPECIALCARBINE_MK2_CAMO_IND_01")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_SPECIALCARBINE_MK2_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_SPECIALCARBINE_MK2_CLIP_02`},
+			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = `COMPONENT_SPECIALCARBINE_MK2_CLIP_TRACER`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_SPECIALCARBINE_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = `COMPONENT_SPECIALCARBINE_MK2_CLIP_ARMORPIERCING`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_SPECIALCARBINE_MK2_CLIP_FMJ`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope_holo', label = _U('component_scope_holo'), hash = `COMPONENT_AT_SIGHTS`},
+			{name = 'scope_small', label = _U('component_scope_small'), hash = `COMPONENT_AT_SCOPE_MACRO_MK2`},
+			{name = 'scope_large', label = _U('component_scope_large'), hash = `COMPONENT_AT_SCOPE_MEDIUM_MK2`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`},
+			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = `COMPONENT_AT_MUZZLE_01`},
+			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = `COMPONENT_AT_MUZZLE_02`},
+			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = `COMPONENT_AT_MUZZLE_03`},
+			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = `COMPONENT_AT_MUZZLE_04`},
+			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = `COMPONENT_AT_MUZZLE_05`},
+			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = `COMPONENT_AT_MUZZLE_06`},
+			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = `COMPONENT_AT_MUZZLE_07`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP_02`},
+			{name = 'barrel_default', label = _U('component_barrel_default'), hash = `COMPONENT_AT_SC_BARREL_01`},
+			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = `COMPONENT_AT_SC_BARREL_02`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_SPECIALCARBINE_MK2_CAMO_IND_01`}
 		}
 	},
 	-- Sniper
@@ -833,8 +833,8 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SNIPER'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_LARGE")},
-			{name = 'scope_advanced', label = _U('component_scope_advanced'), hash = GetHashKey("COMPONENT_AT_SCOPE_MAX")}
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_LARGE`},
+			{name = 'scope_advanced', label = _U('component_scope_advanced'), hash = `COMPONENT_AT_SCOPE_MAX`}
 		}
 	},
 	{
@@ -843,32 +843,32 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SNIPER'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CLIP_02")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CLIP_ARMORPIERCING")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CLIP_FMJ")},
-			{name = 'ammo_explosive', label = _U('component_ammo_explosive'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CLIP_EXPLOSIVE")},
-			{name = 'scope_zoom', label = _U('component_scope_zoom'), hash = GetHashKey("COMPONENT_AT_SCOPE_LARGE_MK2")},
-			{name = 'scope_advanced', label = _U('component_scope_advanced'), hash = GetHashKey("COMPONENT_AT_SCOPE_MAX")},
-			{name = 'scope_nightvision', label = _U('component_scope_nightvision'), hash = GetHashKey("COMPONENT_AT_SCOPE_NV")},
-			{name = 'scope_thermal', label = _U('component_scope_thermal'), hash = GetHashKey("COMPONENT_AT_SCOPE_THERMAL")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_SR_SUPP_03")},
-			{name = 'muzzle_squared', label = _U('component_muzzle_squared'), hash = GetHashKey("COMPONENT_AT_MUZZLE_08")},
-			{name = 'muzzle_bell', label = _U('component_muzzle_bell'), hash = GetHashKey("COMPONENT_AT_MUZZLE_09")},
-			{name = 'barrel_default', label = _U('component_barrel_default'), hash = GetHashKey("COMPONENT_AT_SR_BARREL_01")},
-			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = GetHashKey("COMPONENT_AT_SR_BARREL_02")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_HEAVYSNIPER_MK2_CAMO_IND_01")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_HEAVYSNIPER_MK2_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_HEAVYSNIPER_MK2_CLIP_02`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_HEAVYSNIPER_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = `COMPONENT_HEAVYSNIPER_MK2_CLIP_ARMORPIERCING`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_HEAVYSNIPER_MK2_CLIP_FMJ`},
+			{name = 'ammo_explosive', label = _U('component_ammo_explosive'), hash = `COMPONENT_HEAVYSNIPER_MK2_CLIP_EXPLOSIVE`},
+			{name = 'scope_zoom', label = _U('component_scope_zoom'), hash = `COMPONENT_AT_SCOPE_LARGE_MK2`},
+			{name = 'scope_advanced', label = _U('component_scope_advanced'), hash = `COMPONENT_AT_SCOPE_MAX`},
+			{name = 'scope_nightvision', label = _U('component_scope_nightvision'), hash = `COMPONENT_AT_SCOPE_NV`},
+			{name = 'scope_thermal', label = _U('component_scope_thermal'), hash = `COMPONENT_AT_SCOPE_THERMAL`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_SR_SUPP_03`},
+			{name = 'muzzle_squared', label = _U('component_muzzle_squared'), hash = `COMPONENT_AT_MUZZLE_08`},
+			{name = 'muzzle_bell', label = _U('component_muzzle_bell'), hash = `COMPONENT_AT_MUZZLE_09`},
+			{name = 'barrel_default', label = _U('component_barrel_default'), hash = `COMPONENT_AT_SR_BARREL_01`},
+			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = `COMPONENT_AT_SR_BARREL_02`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_HEAVYSNIPER_MK2_CAMO_IND_01`}
 		}
 	},
 	{
@@ -877,13 +877,13 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SNIPER'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_CLIP_02")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_LARGE_FIXED_ZOOM")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_VARMOD_LUXE")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_MARKSMANRIFLE_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_MARKSMANRIFLE_CLIP_02`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_LARGE_FIXED_ZOOM`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_MARKSMANRIFLE_VARMOD_LUXE`}
 		}
 	},
 	{
@@ -892,38 +892,38 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SNIPER'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CLIP_01")},
-			{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CLIP_02")},
-			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CLIP_TRACER")},
-			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CLIP_INCENDIARY")},
-			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CLIP_ARMORPIERCING")},
-			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CLIP_FMJ")},
-			{name = 'scope_holo', label = _U('component_scope_holo'), hash = GetHashKey("COMPONENT_AT_SIGHTS")},
-			{name = 'scope_large', label = _U('component_scope_large'), hash = GetHashKey("COMPONENT_AT_SCOPE_MEDIUM_MK2")},
-			{name = 'scope_zoom', label = _U('component_scope_zoom'), hash = GetHashKey("COMPONENT_AT_SCOPE_LARGE_FIXED_ZOOM_MK2")},
-			{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP")},
-			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_01")},
-			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = GetHashKey("COMPONENT_AT_MUZZLE_02")},
-			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = GetHashKey("COMPONENT_AT_MUZZLE_03")},
-			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = GetHashKey("COMPONENT_AT_MUZZLE_04")},
-			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = GetHashKey("COMPONENT_AT_MUZZLE_05")},
-			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = GetHashKey("COMPONENT_AT_MUZZLE_06")},
-			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = GetHashKey("COMPONENT_AT_MUZZLE_07")},
-			{name = 'barrel_default', label = _U('component_barrel_default'), hash = GetHashKey("COMPONENT_AT_MRFL_BARREL_01")},
-			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = GetHashKey("COMPONENT_AT_MRFL_BARREL_02")},
-			{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP_02")},
-			{name = 'camo_finish', label = _U('component_camo_finish'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO")},
-			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO_02")},
-			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO_03")},
-			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO_04")},
-			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO_05")},
-			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO_06")},
-			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO_07")},
-			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO_08")},
-			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO_09")},
-			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO_10")},
-			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = GetHashKey("COMPONENT_MARKSMANRIFLE_MK2_CAMO_IND_01")}
+			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CLIP_01`},
+			{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CLIP_02`},
+			{name = 'ammo_tracer', label = _U('component_ammo_tracer'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CLIP_TRACER`},
+			{name = 'ammo_incendiary', label = _U('component_ammo_incendiary'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CLIP_INCENDIARY`},
+			{name = 'ammo_armor', label = _U('component_ammo_armor'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CLIP_ARMORPIERCING`},
+			{name = 'ammo_fmj', label = _U('component_ammo_fmj'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CLIP_FMJ`},
+			{name = 'scope_holo', label = _U('component_scope_holo'), hash = `COMPONENT_AT_SIGHTS`},
+			{name = 'scope_large', label = _U('component_scope_large'), hash = `COMPONENT_AT_SCOPE_MEDIUM_MK2`},
+			{name = 'scope_zoom', label = _U('component_scope_zoom'), hash = `COMPONENT_AT_SCOPE_LARGE_FIXED_ZOOM_MK2`},
+			{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP`},
+			{name = 'muzzle_flat', label = _U('component_muzzle_flat'), hash = `COMPONENT_AT_MUZZLE_01`},
+			{name = 'muzzle_tactical', label = _U('component_muzzle_tactical'), hash = `COMPONENT_AT_MUZZLE_02`},
+			{name = 'muzzle_fat', label = _U('component_muzzle_fat'), hash = `COMPONENT_AT_MUZZLE_03`},
+			{name = 'muzzle_precision', label = _U('component_muzzle_precision'), hash = `COMPONENT_AT_MUZZLE_04`},
+			{name = 'muzzle_heavy', label = _U('component_muzzle_heavy'), hash = `COMPONENT_AT_MUZZLE_05`},
+			{name = 'muzzle_slanted', label = _U('component_muzzle_slanted'), hash = `COMPONENT_AT_MUZZLE_06`},
+			{name = 'muzzle_split', label = _U('component_muzzle_split'), hash = `COMPONENT_AT_MUZZLE_07`},
+			{name = 'barrel_default', label = _U('component_barrel_default'), hash = `COMPONENT_AT_MRFL_BARREL_01`},
+			{name = 'barrel_heavy', label = _U('component_barrel_heavy'), hash = `COMPONENT_AT_MRFL_BARREL_02`},
+			{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP_02`},
+			{name = 'camo_finish', label = _U('component_camo_finish'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO`},
+			{name = 'camo_finish2', label = _U('component_camo_finish2'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO_02`},
+			{name = 'camo_finish3', label = _U('component_camo_finish3'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO_03`},
+			{name = 'camo_finish4', label = _U('component_camo_finish4'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO_04`},
+			{name = 'camo_finish5', label = _U('component_camo_finish5'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO_05`},
+			{name = 'camo_finish6', label = _U('component_camo_finish6'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO_06`},
+			{name = 'camo_finish7', label = _U('component_camo_finish7'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO_07`},
+			{name = 'camo_finish8', label = _U('component_camo_finish8'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO_08`},
+			{name = 'camo_finish9', label = _U('component_camo_finish9'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO_09`},
+			{name = 'camo_finish10', label = _U('component_camo_finish10'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO_10`},
+			{name = 'camo_finish11', label = _U('component_camo_finish11'), hash = `COMPONENT_MARKSMANRIFLE_MK2_CAMO_IND_01`}
 		}
 	},
 	{
@@ -932,10 +932,10 @@ Config.Weapons = {
 		ammo = {label = _U('ammo_rounds'), hash = 'AMMO_SNIPER'},
 		tints = Config.DefaultWeaponTints,
 		components = {
-			{name = 'scope', label = _U('component_scope'), hash = GetHashKey("COMPONENT_AT_SCOPE_LARGE")},
-			{name = 'scope_advanced', label = _U('component_scope_advanced'), hash = GetHashKey("COMPONENT_AT_SCOPE_MAX")},
-			{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")},
-			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey("COMPONENT_SNIPERRIFLE_VARMOD_LUXE")}
+			{name = 'scope', label = _U('component_scope'), hash = `COMPONENT_AT_SCOPE_LARGE`},
+			{name = 'scope_advanced', label = _U('component_scope_advanced'), hash = `COMPONENT_AT_SCOPE_MAX`},
+			{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`},
+			{name = 'luxary_finish', label = _U('component_luxary_finish'), hash = `COMPONENT_SNIPERRIFLE_VARMOD_LUXE`}
 		}
 	},
 	-- Heavy / Launchers
@@ -974,23 +974,23 @@ Config.Weapons = {
 		Config.Weapons[Length + 1] = {
 			name = 'WEAPON_TACTICALRIFLE',
 			label = _U('weapon_tactilerifle'),
-			ammo = {label = _U('ammo_rounds'), hash = GetHashKey("AMMO_RIFLE")},
+			ammo = {label = _U('ammo_rounds'), hash = `AMMO_RIFLE`},
 			tints = Config.DefaultWeaponTints,
 			components = {
-					{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_TACTICALRIFLE_CLIP_01")},
-					{name = 'clip_extended', label = _U('component_clip_extended'), hash = GetHashKey("COMPONENT_TACTICALRIFLE_CLIP_02")},
-					{name = 'flashlight', label = _U('component_flashlight'), hash = GetHashKey("COMPONENT_AT_AR_FLSH_REH")},
-					{name = 'grip', label = _U('component_grip'), hash = GetHashKey("COMPONENT_AT_AR_AFGRIP")},
-					{name = 'suppressor', label = _U('component_suppressor'), hash = GetHashKey("COMPONENT_AT_AR_SUPP_02")}
+					{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_TACTICALRIFLE_CLIP_01`},
+					{name = 'clip_extended', label = _U('component_clip_extended'), hash = `COMPONENT_TACTICALRIFLE_CLIP_02`},
+					{name = 'flashlight', label = _U('component_flashlight'), hash = `COMPONENT_AT_AR_FLSH_REH`},
+					{name = 'grip', label = _U('component_grip'), hash = `COMPONENT_AT_AR_AFGRIP`},
+					{name = 'suppressor', label = _U('component_suppressor'), hash = `COMPONENT_AT_AR_SUPP_02`}
 			}
 		}
 		Config.Weapons[Length + 2] = {
 			name = 'WEAPON_PRECISIONRIFLE',
 			label = _U('weapon_precisionrifle'),
-			ammo = {label = _U('ammo_rounds'), hash = GetHashKey("AMMO_SNIPER")},
+			ammo = {label = _U('ammo_rounds'), hash = `AMMO_SNIPER`},
 			tints = Config.DefaultWeaponTints,
 			components = {
-					{name = 'clip_default', label = _U('component_clip_default'), hash = GetHashKey("COMPONENT_PRECISIONRIFLE_CLIP_01")},
+					{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_PRECISIONRIFLE_CLIP_01`},
 			}
 		}
 		Config.Weapons[Length+ 3] = {name = 'WEAPON_METALDETECTOR', label = _U('weapon_metaldetector'), components = {}}
