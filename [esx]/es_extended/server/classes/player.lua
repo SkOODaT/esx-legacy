@@ -448,7 +448,9 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 				self.ammotypes[#self.ammotypes+1] = {name = ammotype, ammo = ammoCount}
 			end
 
-			self.triggerEvent('esx:addWeapon', weapon, ammoCount)
+			--self.triggerEvent('esx:addWeapon', weapon, ammoCount)
+			GiveWeaponToPed(GetPlayerPed(self.source), joaat(weapon), ammoCount, false, false)
+
 			self.triggerEvent('esx:addInventoryItem', weaponLabel, false, true)
 		end
 	end
@@ -462,7 +464,8 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 			if component then
 				if not self.hasWeaponComponent(weaponName, weaponComponent) then
 					self.loadout[loadoutNum].components[#self.loadout[loadoutNum].components + 1] = weaponComponent
-					self.triggerEvent('esx:addWeaponComponent', weaponName, weaponComponent)
+					local componentHash = ESX.GetWeaponComponent(weapon, weaponComponent).hash
+					GiveWeaponComponentToPed(GetPlayerPed(self.source), joaat(weapon), componentHash)
 					self.triggerEvent('esx:addInventoryItem', component.label, false, true)
 				end
 			end
@@ -474,7 +477,7 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 
 		if weapon then
 			weapon.ammo = weapon.ammo + ammoCount
-			self.triggerEvent('esx:setWeaponAmmo', weaponName, weapon.ammo)
+			SetPedAmmo(GetPlayerPed(self.source), joaat(weaponName), weapon.ammo)
 		end
 
 		--local ammoHash = ESX.GetWeaponAmmoType(weaponName)

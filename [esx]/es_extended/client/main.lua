@@ -134,7 +134,7 @@ end)
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 	ESX.PlayerData = xPlayer
-
+	ESX.PlayerData.ped = PlayerPedId()
 	FreezeEntityPosition(ESX.PlayerData.ped, true)
 	-- Make player not killable
 	SetPlayerInvincible(ESX.PlayerData.ped, true)
@@ -274,7 +274,7 @@ AddEventHandler('esx:onPlayerLogout', function()
 end)
 
 RegisterNetEvent('esx:setMaxWeight')
-AddEventHandler('esx:setMaxWeight', function(newMaxWeight) ESX.PlayerData.maxWeight = newMaxWeight end)
+AddEventHandler('esx:setMaxWeight', function(newMaxWeight) ESX.SetPlayerData("maxWeight", newMaxWeight) end)
 
 local function onPlayerSpawn()
 	if ESX.PlayerLoaded then
@@ -394,13 +394,12 @@ if not Config.OxInventory then
 
 	RegisterNetEvent('esx:addWeapon')
 	AddEventHandler('esx:addWeapon', function(weapon, ammo)
-		GiveWeaponToPed(ESX.PlayerData.ped, joaat(weapon), ammo, false, false)
+		print("[WARNING] event 'esx:addWeapon' is deprecated. Please use xPlayer.addWeapon Instead!")
 	end)
 
 	RegisterNetEvent('esx:addWeaponComponent')
 	AddEventHandler('esx:addWeaponComponent', function(weapon, weaponComponent)
-		local componentHash = ESX.GetWeaponComponent(weapon, weaponComponent).hash
-		GiveWeaponComponentToPed(ESX.PlayerData.ped, joaat(weapon), componentHash)
+		print("[WARNING] event 'esx:addWeaponComponent' is deprecated. Please use xPlayer.addWeaponComponent Instead!")
 	end)
 
 	RegisterNetEvent('esx:setAmmo')
@@ -410,12 +409,13 @@ if not Config.OxInventory then
 
 	RegisterNetEvent('esx:setWeaponAmmo')
 	AddEventHandler('esx:setWeaponAmmo', function(weapon, weaponAmmo)
-		SetPedAmmo(ESX.PlayerData.ped, joaat(weapon), weaponAmmo)
+		print("[WARNING] event 'esx:setWeaponAmmo' is deprecated. Please use xPlayer.addWeaponComponent Instead!")
 	end)
 
 	RegisterNetEvent('esx:setWeaponTint')
 	AddEventHandler('esx:setWeaponTint', function(weapon, weaponTintIndex)
 		SetPedWeaponTintIndex(ESX.PlayerData.ped, joaat(weapon), weaponTintIndex)
+		
 	end)
 
 	RegisterNetEvent('esx:removeWeapon')
