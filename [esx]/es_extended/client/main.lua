@@ -92,10 +92,11 @@ end
 RegisterNetEvent('esx:spawnPlayer')
 AddEventHandler('esx:spawnPlayer', function(xPlayer, skin)
 	ESX.PlayerData = xPlayer
+	ESX.PlayerData.ped = PlayerPedId()
 
-	FreezeEntityPosition(PlayerPedId(), true)
+	--FreezeEntityPosition(PlayerPedId(), true)
 	-- Make player not killable
-	SetPlayerInvincible(PlayerPedId(), true)
+	SetPlayerInvincible(ESX.PlayerData.ped, true)
 
 	-- iterate over whole table to get all keys
 	local keyset = {}
@@ -123,7 +124,7 @@ AddEventHandler('esx:spawnPlayer', function(xPlayer, skin)
 		TriggerEvent('esx:loadingScreenOff')
 		ShutdownLoadingScreen()
 		ShutdownLoadingScreenNui()
-		FreezeEntityPosition(ESX.PlayerData.ped, false)
+		--FreezeEntityPosition(ESX.PlayerData.ped, false)
 		-- Make player killable again
 		SetPlayerInvincible(ESX.PlayerData.ped, false)
 	end)
@@ -136,7 +137,7 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 	ESX.PlayerData = xPlayer
 	ESX.PlayerData.ped = PlayerPedId()
 
-	FreezeEntityPosition(ESX.PlayerData.ped, true)
+	--FreezeEntityPosition(ESX.PlayerData.ped, true)
 	-- Make player not killable
 	SetPlayerInvincible(ESX.PlayerData.ped, true)
 
@@ -168,7 +169,7 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 			TriggerEvent('esx:loadingScreenOff')
 			ShutdownLoadingScreen()
 			ShutdownLoadingScreenNui()
-			FreezeEntityPosition(ESX.PlayerData.ped, false)
+			--FreezeEntityPosition(ESX.PlayerData.ped, false)
 			-- Make player killable again
 			SetPlayerInvincible(ESX.PlayerData.ped, false)
 		end)
@@ -177,6 +178,7 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 	ESX.PlayerLoaded = true
 
 	while ESX.PlayerData.ped == nil do Wait(20) end
+	ESX.PlayerLoaded = true
 	-- enable PVP
 	if Config.EnablePVP then
 		SetCanAttackFriendly(ESX.PlayerData.ped, true, false)
