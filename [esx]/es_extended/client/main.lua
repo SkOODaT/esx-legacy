@@ -179,7 +179,7 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 
 	while ESX.PlayerData.ped == nil do Wait(20) end
 
-	-- enable PVP
+		-- enable PVP
 	if Config.EnablePVP then
 		SetCanAttackFriendly(ESX.PlayerData.ped, true, false)
 		NetworkSetFriendlyFireOption(true)
@@ -280,10 +280,8 @@ RegisterNetEvent('esx:setMaxWeight')
 AddEventHandler('esx:setMaxWeight', function(newMaxWeight) ESX.SetPlayerData("maxWeight", newMaxWeight) end)
 
 local function onPlayerSpawn()
-	if ESX.PlayerLoaded then
 		ESX.SetPlayerData('ped', PlayerPedId())
 		ESX.SetPlayerData('dead', false)
-	end
 end
 
 AddEventHandler('playerSpawned', onPlayerSpawn)
