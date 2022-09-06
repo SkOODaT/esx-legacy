@@ -91,7 +91,6 @@ end
 
 RegisterNetEvent('esx:spawnPlayer')
 AddEventHandler('esx:spawnPlayer', function(xPlayer, skin)
-	ESX.PlayerLoaded = true
 	ESX.PlayerData = xPlayer
 
 	FreezeEntityPosition(PlayerPedId(), true)
@@ -128,12 +127,12 @@ AddEventHandler('esx:spawnPlayer', function(xPlayer, skin)
 		-- Make player killable again
 		SetPlayerInvincible(ESX.PlayerData.ped, false)
 	end)
+	ESX.PlayerLoaded = true
 	SetPlayerCameras()
 end)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
-	ESX.PlayerLoaded = true
 	ESX.PlayerData = xPlayer
 
 	FreezeEntityPosition(ESX.PlayerData.ped, true)
@@ -174,6 +173,8 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 		end)
 	end
 
+	ESX.PlayerLoaded = true
+
 	while ESX.PlayerData.ped == nil do Wait(20) end
 	-- enable PVP
 	if Config.EnablePVP then
@@ -190,49 +191,61 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 			local DisablePlayerVehicleRewards = DisablePlayerVehicleRewards
 			local RemoveAllPickupsOfType = RemoveAllPickupsOfType
 			local HideHudComponentThisFrame = HideHudComponentThisFrame
-			
+			local PlayerId = PlayerId()
+			local DisabledComps = {}
+			for i=1, #(Config.RemoveHudCommonents) do
+				if Config.RemoveHudCommonents[i] then
+					DisabledComps[#DisabledComps + 1] = i
+				end
+			end
 			while true do 
-				Wait(0)
-				local PlayerId = PlayerId()
+				local Sleep = true
+
 				if Config.DisableHealthRegeneration then
+					Sleep = false
 					SetPlayerHealthRechargeMultiplier(PlayerId, 0.0)
 				end
 
 				if Config.DisableWeaponWheel then
+					Sleep = false
 					BlockWeaponWheelThisFrame()
 					DisableControlAction(0, 37,true)
 				end
 
 				if Config.DisableAimAssist then
+					Sleep = false
 					if IsPedArmed(ESX.PlayerData.ped, 4) then
 						SetPlayerLockonRangeOverride(PlayerId, 2.0)
 					end
 				end
 
 				if Config.DisableVehicleRewards then
+					Sleep = false
 					DisablePlayerVehicleRewards(PlayerId)
 				end
 			
 				if Config.DisableNPCDrops then
+					Sleep = false
 					RemoveAllPickupsOfType(0xDF711959) -- carbine rifle
 					RemoveAllPickupsOfType(0xF9AFB48F) -- pistol
 					RemoveAllPickupsOfType(0xA9355DCD) -- pumpshotgun
 				end
 
-				if Config.RemoveHudCommonents then
-					for i=1, #(Config.RemoveHudCommonents) do
-						 if Config.RemoveHudCommonents[i] then
-								HideHudComponentThisFrame(i)
-						 end
+				if #DisabledComps > 0 then
+					Sleep = false
+					for i=1, #(DisabledComps) do
+						HideHudComponentThisFrame(DisabledComps[i])
 					end
 				end
+				
+			Wait(Sleep and 1500 or 0)
 			end
 		end)
 
 	if Config.EnableHud then
 		for i=1, #(ESX.PlayerData.accounts) do
 			local accountTpl = '<div><img src="img/accounts/' .. ESX.PlayerData.accounts[i].name .. '.png"/>&nbsp;{{money}}</div>'
-			ESX.UI.HUD.RegisterElement('account_' .. ESX.PlayerData.accounts[i].name, i, 0, accountTpl, {money = ESX.Math.GroupDigits(v.money)})
+			ESX.UI.HUD.RegisterElement('account_' .. ESX.PlayerData.accounts[i].name, i, 0, accountTpl, {money = ESX.Math.GroupDigits(ESX.PlayerData.accounts[i].money)})
 		end
 
 		local jobTpl = '<div>{{job_label}}{{grade_label}}</div>'
@@ -312,10 +325,11 @@ AddEventHandler('esx:restoreLoadout', function()
 				AddAmmoToPed(ESX.PlayerData.ped, weaponHash, v.ammo)
 				ammoTypes[ammoType] = true
 			end]]--
+		end
 
-			for k3,v3 in ipairs(ESX.PlayerData.ammotypes) do
-				AddAmmoToPedByType(ESX.PlayerData.ped, GetHashKey(v3.name), v3.ammo)
-			end
+		for k3,v3 in ipairs(ESX.PlayerData.ammotypes) do
+			print("restoreLoadout", joaat(v3.name), v3.ammo)
+			AddAmmoToPedByType(ESX.PlayerData.ped, joaat(v3.name), v3.ammo)
 		end
 	end
 
@@ -391,7 +405,7 @@ if not Config.OxInventory then
 
 	RegisterNetEvent('esx:setAmmo')
 	AddEventHandler('esx:setAmmo', function(ammoType, ammoCount)
-		SetPedAmmoByType(ESX.PlayerData.ped, GetHashKey(ammoType), ammoCount)
+		SetPedAmmoByType(ESX.PlayerData.ped, joaat(ammoType), ammoCount)
 	end)
 
 	RegisterNetEvent('esx:setWeaponAmmo')
@@ -582,15 +596,16 @@ function StartServerSyncLoops()
 									if ammoCount ~= currentWeapon.Ammo then
 										currentWeapon.Ammo = ammoCount
 										TriggerServerEvent('esx:updateWeaponAmmo', weapon.name, ammoCount)
+										--print("UPDATE AMMO 1: ", weapon.name, ammoCount)
 									end 
-								end   
+								end
 							end
 							
 							for k,v in ipairs(ESX.PlayerData.ammotypes) do
-								local ammoCount = GetPedAmmoByType(ESX.PlayerData.ped, GetHashKey(v.name))
-								local ammoBool, ammoMax = GetMaxAmmoByType(ESX.PlayerData.ped, GetHashKey(v.name))
+								local ammoCount = GetPedAmmoByType(ESX.PlayerData.ped, joaat(v.name))
+								local ammoBool, ammoMax = GetMaxAmmoByType(ESX.PlayerData.ped, joaat(v.name))
 								TriggerServerEvent('esx:updateAmmo', v.name, ammoCount, ammoMax)
-								--print("UPDATE AMMO: ", v.name, ammoCount, ammoMax)
+								--print("UPDATE AMMO 2: ", v.name, ammoCount, ammoMax)
 							end
 							currentWeapon.timer = 0
 						elseif currentWeapon.timer > sleep then
