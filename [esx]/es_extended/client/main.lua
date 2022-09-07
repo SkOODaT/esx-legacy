@@ -135,6 +135,7 @@ RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 	ESX.PlayerData = xPlayer
 	ESX.PlayerData.ped = PlayerPedId()
+
 	FreezeEntityPosition(ESX.PlayerData.ped, true)
 	-- Make player not killable
 	SetPlayerInvincible(ESX.PlayerData.ped, true)
@@ -405,11 +406,13 @@ if not Config.OxInventory then
 	RegisterNetEvent('esx:setAmmo')
 	AddEventHandler('esx:setAmmo', function(ammoType, ammoCount)
 		SetPedAmmoByType(ESX.PlayerData.ped, joaat(ammoType), ammoCount)
+		--print("[WARNING] event 'esx:setAmmo' is deprecated. Please use xPlayer.addWeaponComponent Instead!")
 	end)
 
 	RegisterNetEvent('esx:setWeaponAmmo')
 	AddEventHandler('esx:setWeaponAmmo', function(weapon, weaponAmmo)
-		print("[WARNING] event 'esx:setWeaponAmmo' is deprecated. Please use xPlayer.addWeaponComponent Instead!")
+		GiveWeaponToPed(ESX.PlayerData.ped, joaat(weapon), ammo, false, false)
+		--print("[WARNING] event 'esx:setWeaponAmmo' is deprecated. Please use xPlayer.addWeaponComponent Instead!")
 	end)
 
 	RegisterNetEvent('esx:setWeaponTint')

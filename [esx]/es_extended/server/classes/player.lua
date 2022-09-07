@@ -1,5 +1,5 @@
 local SkOODaTDebug = false
-local SkOODaTDebug2 = false
+local SkOODaTDebug2 = true
 
 function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, weight, job, loadout, ammotypes, name, coords)
 	local targetOverrides = Config.PlayerFunctionOverride and Core.PlayerFunctionOverrides[Config.PlayerFunctionOverride] or {}
