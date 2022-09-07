@@ -198,7 +198,7 @@ AddEventHandler('esx:playerLoaded', function(xPlayer, isNew, skin)
 				if Config.RemoveHudCommonents[i] then
 					DisabledComps[#DisabledComps + 1] = i
 				end
-		 end
+			end
 			while true do 
 				local Sleep = true
 
