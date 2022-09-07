@@ -255,16 +255,16 @@ function loadESXPlayer(identifier, playerId, isNew)
     end
   end
 
-	-- ammotypes
-	if result.ammotypes and result.ammotypes ~= '' then
-		local ammotypes = json.decode(result.ammotypes)
-		for name,ammocount in pairs(ammotypes) do
-			table.insert(userData.ammotypes, {
-				name = name,
-				ammo = ammocount.ammo
-			})
-		end
-	end
+  -- ammotypes
+  if result.ammotypes and result.ammotypes ~= '' then
+    local ammotypes = json.decode(result.ammotypes)
+    for name,ammocount in pairs(ammotypes) do
+      table.insert(userData.ammotypes, {
+        name = name,
+        ammo = ammocount.ammo
+      })
+    end
+  end
 
   -- Identity
   if result.firstname and result.firstname ~= '' then
@@ -364,35 +364,34 @@ AddEventHandler('esx:updateCoords', function()
   end
 end)
 
-
 RegisterNetEvent('esx:onPlayerDeath')
 AddEventHandler('esx:onPlayerDeath', function()
-	local playerId = source
-	local xPlayer = ESX.GetPlayerFromId(playerId)
+  local playerId = source
+  local xPlayer = ESX.GetPlayerFromId(playerId)
 
-	-- Switch player out/in
-	Citizen.Wait(5000) -- (5000 wait after death)
-	TriggerClientEvent('esx:PlayerSwitchOutIn', playerId, xPlayer, skin)
+  -- Switch player out/in
+  Citizen.Wait(5000) -- (5000 wait after death)
+  TriggerClientEvent('esx:PlayerSwitchOutIn', playerId, xPlayer, skin)
 
-	MySQL.Async.fetchAll('SELECT skin FROM users WHERE identifier = @identifier', {
-		['@identifier'] = xPlayer.identifier
-	}, function(users)
-		local user, skin = users[1]
+  MySQL.Async.fetchAll('SELECT skin FROM users WHERE identifier = @identifier', {
+    ['@identifier'] = xPlayer.identifier
+  }, function(users)
+    local user, skin = users[1]
 
-		local jobSkin = {
-			skin_male   = xPlayer.job.skin_male,
-			skin_female = xPlayer.job.skin_female
-		}
+    local jobSkin = {
+      skin_male   = xPlayer.job.skin_male,
+      skin_female = xPlayer.job.skin_female
+    }
 
-		if user.skin then
-			skin = json.decode(user.skin)
-		end
+    if user.skin then
+      skin = json.decode(user.skin)
+    end
 
-		Citizen.Wait(4000)
+    Citizen.Wait(4000)
 
-		TriggerClientEvent('esx:spawnPlayer', playerId, xPlayer, skin)
+    TriggerClientEvent('esx:spawnPlayer', playerId, xPlayer, skin)
 
-	end)
+  end)
 end)
 
 if not Config.OxInventory then

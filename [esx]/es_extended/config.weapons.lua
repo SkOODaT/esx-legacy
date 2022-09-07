@@ -141,7 +141,7 @@ Config.Weapons = {
 	{
 		name = 'WEAPON_PISTOL',
 		label = _U('weapon_pistol'),
-		ammo = {label = _U('ammo_rounds'), name = 'AMMO_PISTOL', hash = `AMMO_PISTOL`},
+		ammo = {label = _U('ammo_rounds'), hash = `AMMO_PISTOL`},
 		tints = Config.DefaultWeaponTints,
 		components = {
 			{name = 'clip_default', label = _U('component_clip_default'), hash = `COMPONENT_PISTOL_CLIP_01`},
