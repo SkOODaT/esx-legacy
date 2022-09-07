@@ -1,16 +1,8 @@
-local SkOODaTDebug = true
+local SkOODaTDebug = false
 
 local HasAlreadyEnteredMarker = false
 local CurrentAction, CurrentActionMsg, LastZone
 local CurrentActionData = {}
-ESX	= nil
-
-Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(250)
-	end
-end)
 
 --local inMarker = false
 --[[CreateMarker = function(coords, rgba, height, scale)
@@ -82,15 +74,13 @@ function OpenAmmoMenu()
 		elements = Config.Items
 	}, function(data, menu)
 		-- Calculate Player Ammos
-		print(ESX.PlayerData.ped)
-		print(data.current.hash)
-		local pammoCount = GetPedAmmoByType(ESX.PlayerData.ped, GetHashKey(data.current.hash))
-		local ammoBool, ammoMax = GetMaxAmmoByType(ESX.PlayerData.ped, GetHashKey(data.current.hash))
-		print(pammoCount)
-		print(ammoMax)
+		local hash = joaat(data.current.hash)
+		local pammoCount = GetPedAmmoByType(ESX.PlayerData.ped, hash)
+		local ammoBool, ammoMax = GetMaxAmmoByType(ESX.PlayerData.ped, hash)
 		if SkOODaTDebug then
 			print("---------------------")
 			print("Player ammo count: ", pammoCount)
+			print("MAx ammo count: ", ammoMax)
 		end
 		if pammoCount < ammoMax then
 			local PlayerOpenSlots = ammoMax - pammoCount
@@ -119,7 +109,7 @@ function OpenAmmoMenu()
 			print("TriggerServerEvent AMMO: ", data.current.amount)
 		end
 		-- Event Trigger
-		TriggerServerEvent("esx_purchaseammo:Buy", data.current.hash, data.current.price, data.current.amount)
+		ESX.TriggerServerCallback('esx_purchaseammo:Buy', cb, data.current.price, data.current.amount, data.current.name, data.current.ammoname)
 	end,
 	function(data, menu)
 		menu.close()
@@ -182,10 +172,6 @@ end)
 
 -- Key Controls
 Citizen.CreateThread(function()
-	-- Wait for the user to load
-	while not NetworkIsSessionStarted() do
-		Wait(500)
-	end
 	while true do
 		Citizen.Wait(0)
 		if CurrentAction ~= nil then
